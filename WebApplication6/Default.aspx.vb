@@ -54,8 +54,8 @@ Public Class _Default
 
 
         LBNombre.Text = usrRest.first_name
-        
-        LBpicture.Text = "<img src=""" & usrRest.pic_big_with_logo & """/>"
+        LBpicture.Text = "http://graph.facebook.com/" & usrRest.username & "/picture?width=180"
+        'LBpicture.Text = "<img src=""" & usrRest.pic_big_with_logo & """/>"
     End Sub
 
     Private Sub hazalgo()
