@@ -55,7 +55,7 @@ Public Class _Default
 
         LBNombre.Text = usrRest.first_name
         
-        LBpicture.Text = "<img src=""" & usrRest.picture & """/>"
+        LBpicture.Text = "<img src=""" & usrRest.pic_big & """/>"
     End Sub
 
     Private Sub hazalgo()
