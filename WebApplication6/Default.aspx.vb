@@ -19,9 +19,9 @@ Public Class _Default
         Else
             If Not Request.Url.ToString.Contains("WebResource.axd") And Not Request.Url.ToString.Contains("ScriptResource.axd") Then
                 Session("myurl") = Request.Url.ToString
-                Session("inscripcionURLRegreso") = Request.Url.AbsoluteUri
+                'Session("inscripcionURLRegreso") = Request.Url.AbsoluteUri
 
-                Dim myURL As String = Session("myurl")
+                'Dim myURL As String = Session("myurl")
                 Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", Session.SessionID)
 
                 Response.Redirect(FbURL)
@@ -54,7 +54,7 @@ Public Class _Default
 
 
         LBNombre.Text = usrRest.first_name
-        LBpicture.Text = "http://graph.facebook.com/" & usrRest.username & "/picture?width=180"
+        LBpicture.Text = "<img src=""http://graph.facebook.com/" & usrRest.username & "/picture?width=180""/>"
         'LBpicture.Text = "<img src=""" & usrRest.pic_big_with_logo & """/>"
     End Sub
 
