@@ -57,7 +57,7 @@ Public Class _Default
         LBpicture.Text = "<img src=""http://graph.facebook.com/" & usrRest.username & "/picture?type=large""/>"
         Dim code2 As String = Request("code")
         Dim state2 As String = Request("state")
-        Inscribete.Text = "<a href=""http://registro.tiempooficial.com/default.aspx?evento=26&facebook=on"">¡Inscríbete!</a>"
+        Inscribete.Text = "<a href=""http://registro.tiempooficial.com/default.aspx?evento=26&facebook=on"" target=""_blank"">¡Inscríbete!</a>"
         'LBpicture.Text = "<img src=""" & usrRest.pic_big_with_logo & """/>"
     End Sub
 
