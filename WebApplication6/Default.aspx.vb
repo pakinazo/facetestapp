@@ -22,13 +22,49 @@ Public Class _Default
         'Next
 
         'Dim fbClient As New Facebook.FacebookClient(access_token)
+        Dim code As String = Request("code")
+        Dim state As String = Request("state")
+        If code <> "" And state = Session.SessionID Then
+            getUserData(code)
+        Else
+            Session("myurl") = Request.Url.ToString
+            Dim myURL As String = Session("myurl")
+            Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "294444543985836", myURL, Session.SessionID)
+            Response.Redirect(FbURL)
+        End If
 
-        Dim fb As New Facebook.FacebookClient
-        Dim result As Object = fb.Get("oauth/access_token", New With {.client_id = "779337262082870", .client_secret = "0e4c136ef9121b45a272c8d43e77509b", .grant_type = "client_credentials"})
+        
 
-        Dim fbclient As New Facebook.FacebookClient(result.access_token)
 
-        Dim usrRest = fbclient.Get("me")
-        LBNombre.Text = usrRest.first_name & "!"
+        '   Dim fb As New Facebook.FacebookClient
+        '   Dim result As Object = fb.Get("oauth/access_token", New With {.client_id = "779337262082870", .client_secret = "0e4c136ef9121b45a272c8d43e77509b", .grant_type = "client_credentials"})
+
+        '    Dim fbclient As New Facebook.FacebookClient(result.access_token)
+
+        '   Dim usrRest = fbclient.Get("me")
+        '   LBNombre.Text = usrRest.first_name & "!"
     End Sub
+
+    Private Sub getUserData(ByVal code As String)
+        Dim MyURL As String = Session("myurl")
+        Dim fbURL As String = String.Format("https://graph.facebook.com/oauth/access_token?client_id={0}&redirect_uri={1}&client_secret={2}&code={3}", "779337262082870", MyURL, "0e4c136ef9121b45a272c8d43e77509b", code)
+
+        Dim fbWeb As New WebClient
+        Dim result As String = fbWeb.DownloadString(fbURL)
+
+        Dim access_token As String = String.Empty
+        Dim expires As Double
+
+        For Each s As String In result.Split("&")
+            If s.Contains("access_token") Then
+                access_token = s.Replace("access_token=", "")
+            Else
+                expires = s.Replace("expires=", "")
+            End If
+        Next
+
+        Dim fbClient As New Facebook.FacebookClient(access_token)
+        Dim usrRest = fbClient.Get("me")
+    End Sub
+
 End Class
