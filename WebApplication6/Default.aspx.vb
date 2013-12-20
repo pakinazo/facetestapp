@@ -54,10 +54,10 @@ Public Class _Default
 
 
         LBNombre.Text = usrRest.first_name
-        LBpicture.Text = "<img src=""http://graph.facebook.com/" & usrRest.username & "/picture?width=180""/>"
+        LBpicture.Text = "<img src=""http://graph.facebook.com/" & usrRest.username & "/picture?type=large""/>"
         Dim code2 As String = Request("code")
         Dim state2 As String = Request("state")
-        Inscribete.Text = "<a href=""http://registro.tiempooficial.com/default.aspx?evento=26&code=" & code2 & "state=" & state2 & """>Inscríbete!!</a>"
+        Inscribete.Text = "<a href=""http://registro.tiempooficial.com/default.aspx?evento=26&code=" & code2 & "state=" & state2 & ""
         'LBpicture.Text = "<img src=""" & usrRest.pic_big_with_logo & """/>"
     End Sub
 
