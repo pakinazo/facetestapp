@@ -12,4 +12,13 @@ Option Explicit On
 
 
 Partial Public Class _Default
+
+    '''<summary>
+    '''LBNombre control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBNombre As Global.System.Web.UI.WebControls.Label
 End Class
