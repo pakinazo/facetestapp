@@ -22,7 +22,7 @@ Public Class _Default
                 Session("inscripcionURLRegreso") = Request.Url.AbsoluteUri
 
                 Dim myURL As String = Session("myurl")
-                Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", Session.SessionID)
+                Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "http://pakinazocanvas.apphb.com/default.aspx", Session.SessionID)
 
                 Response.Redirect(FbURL)
             End If
@@ -33,7 +33,7 @@ Public Class _Default
    
     Private Sub getUserData(ByVal code As String)
         Dim MyURL As String = Session("myurl")
-        Dim fbURL As String = String.Format("https://graph.facebook.com/oauth/access_token?client_id={0}&redirect_uri={1}&client_secret={2}&code={3}", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", "0e4c136ef9121b45a272c8d43e77509b", code)
+        Dim fbURL As String = String.Format("https://graph.facebook.com/oauth/access_token?client_id={0}&redirect_uri={1}&client_secret={2}&code={3}", "779337262082870", "http://pakinazocanvas.apphb.com/default.aspx", "0e4c136ef9121b45a272c8d43e77509b", code)
 
         Dim fbWeb As New WebClient
         Dim result As String = fbWeb.DownloadString(fbURL)
