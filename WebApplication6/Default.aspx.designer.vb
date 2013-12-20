@@ -30,4 +30,13 @@ Partial Public Class _Default
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBpicture As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Inscribete control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Inscribete As Global.System.Web.UI.WebControls.Label
 End Class
