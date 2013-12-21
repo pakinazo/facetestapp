@@ -16,26 +16,33 @@ Public Class _Default
         Dim code As String = Request("code")
         Dim state As String = Request("state")
   
-        If code <> "" And state = Session.SessionID Then
-            getUserData(code)
-        Else
-            If Not Request.Url.ToString.Contains("WebResource.axd") And Not Request.Url.ToString.Contains("ScriptResource.axd") Then
+        Try
+
+
+            Session("myurl") = Request.Url.ToString
+            If code <> "" And state = Session.SessionID Then
+                getUserData(code)
+            Else
                 Session("myurl") = Request.Url.ToString
                 'Session("inscripcionURLRegreso") = Request.Url.AbsoluteUri
 
                 'Dim myURL As String = Session("myurl")
                 Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", Session.SessionID)
-
+                
                 Response.Redirect(FbURL)
+
+
             End If
-        End If
+        Catch ex As Exception
+
+        End Try
 
 
     End Sub
 
     Private Sub getUserData(ByVal code As String)
         Dim MyURL As String = Session("myurl")
-        Dim fbURL As String = String.Format("https://graph.facebook.com/oauth/access_token?client_id={0}&redirect_uri={1}&client_secret={2}&code={3}", "779337262082870", "https://pakinazocanvas.apphb.com/", "0e4c136ef9121b45a272c8d43e77509b", code)
+        Dim fbURL As String = String.Format("https://graph.facebook.com/oauth/access_token?client_id={0}&redirect_uri={1}&client_secret={2}&code={3}", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", "0e4c136ef9121b45a272c8d43e77509b", code)
 
         Dim fbWeb As New WebClient
         Dim result As String = fbWeb.DownloadString(fbURL)
