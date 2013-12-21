@@ -11,6 +11,7 @@ Public Class _Default
 
     End Sub
 
+
     Private Sub primero()
         Dim code As String = Request("code")
         Dim state As String = Request("state")
@@ -30,7 +31,7 @@ Public Class _Default
 
 
     End Sub
-   
+
     Private Sub getUserData(ByVal code As String)
         Dim MyURL As String = Session("myurl")
         Dim fbURL As String = String.Format("https://graph.facebook.com/oauth/access_token?client_id={0}&redirect_uri={1}&client_secret={2}&code={3}", "779337262082870", "https://pakinazocanvas.apphb.com/", "0e4c136ef9121b45a272c8d43e77509b", code)
