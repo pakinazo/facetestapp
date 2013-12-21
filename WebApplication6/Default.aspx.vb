@@ -23,7 +23,7 @@ Public Class _Default
                 'Session("inscripcionURLRegreso") = Request.Url.AbsoluteUri
 
                 'Dim myURL As String = Session("myurl")
-                Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://pakinazocanvas.apphb.com/", Session.SessionID)
+                Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://apps.facebook.com/primercanvazazo/", Session.SessionID)
 
                 Response.Redirect(FbURL)
             End If
