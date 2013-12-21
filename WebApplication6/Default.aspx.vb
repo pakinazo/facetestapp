@@ -15,20 +15,25 @@ Public Class _Default
     Private Sub primero()
         Dim code As String = Request("code")
         Dim state As String = Request("state")
-        If code <> "" And state = Session.SessionID Then
-            getUserData(code)
-        Else
-            If Not Request.Url.ToString.Contains("WebResource.axd") And Not Request.Url.ToString.Contains("ScriptResource.axd") Then
-                Session("myurl") = Request.Url.ToString
-                'Session("inscripcionURLRegreso") = Request.Url.AbsoluteUri
+        Try
 
-                'Dim myURL As String = Session("myurl")
-                Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", Session.SessionID)
 
-                Response.Redirect(FbURL)
+            If code <> "" And state = Session.SessionID Then
+                getUserData(code)
+            Else
+                If Not Request.Url.ToString.Contains("WebResource.axd") And Not Request.Url.ToString.Contains("ScriptResource.axd") Then
+                    Session("myurl") = Request.Url.ToString
+                    'Session("inscripcionURLRegreso") = Request.Url.AbsoluteUri
+
+                    'Dim myURL As String = Session("myurl")
+                    Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", Session.SessionID)
+
+                    Response.Redirect(FbURL)
+                End If
             End If
-        End If
+        Catch ex As Exception
 
+        End Try
 
     End Sub
 
