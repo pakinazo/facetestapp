@@ -6,6 +6,7 @@ Public Class _Default
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         ' hazalgo()
         If Not Page.IsPostBack Then
+
             primero()
         End If
 
@@ -17,7 +18,7 @@ Public Class _Default
         Dim state As String = Request("state")
         Try
 
-
+            Dim aadsd = Session("algo")
             If code <> "" And state = Session.SessionID Then
                 getUserData(code)
             Else
@@ -25,7 +26,7 @@ Public Class _Default
                     'Session("inscripcionURLRegreso") = Request.Url.AbsoluteUri
 
                     'Dim myURL As String = Session("myurl")
-                Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&display=popup&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", Session.SessionID)
+                Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", Session.SessionID)
 
                     Response.Redirect(FbURL)
 
