@@ -18,14 +18,18 @@ Public Class _Default
         Try
 
 
-                    Session("myurl") = Request.Url.ToString
+            If code <> "" And state = Session.SessionID Then
+                getUserData(code)
+            Else
+                   Session("myurl") = Request.Url.ToString
                     'Session("inscripcionURLRegreso") = Request.Url.AbsoluteUri
 
                     'Dim myURL As String = Session("myurl")
-                    Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", Session.SessionID)
+                Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&display=popup&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", Session.SessionID)
 
                     Response.Redirect(FbURL)
-        
+
+            End If
         Catch ex As Exception
 
         End Try
