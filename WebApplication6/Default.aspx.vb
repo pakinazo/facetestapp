@@ -18,7 +18,7 @@ Public Class _Default
         Dim state As String = Request("state")
         Try
 
-            Dim aadsd = Session("algo")
+            ' Dim aadsd = Session("algo")
             If code <> "" And state = Session.SessionID Then
                 getUserData(code)
             Else
