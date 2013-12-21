@@ -15,7 +15,7 @@ Public Class _Default
     Private Sub primero()
         Dim code As String = Request("code")
         Dim state As String = Request("state")
-  
+
         Try
 
 
@@ -28,8 +28,8 @@ Public Class _Default
 
                 'Dim myURL As String = Session("myurl")
                 Dim FbURL As String = String.Format("https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&state={2}&scope=user_birthday,email,user_hometown,publish_actions", "779337262082870", "https://pakinazocanvas.apphb.com/default.aspx", Session.SessionID)
-                
-                Response.Redirect(FbURL)
+
+                Response.Write("<script language='javascript'>top.location.href='" & FbURL & "'</script>")
 
 
             End If
