@@ -74,11 +74,11 @@ Public Class _Default
         LabelDatosFace.Text += inputString
 
         Try
-            Dim wrtr As StreamWriter = New StreamWriter("c://canvas/users.txt", True)
+            Dim wrtr As StreamWriter = New StreamWriter(Server.MapPath("~/users.txt"), True)
             inputString = String.Format("{0},{1},{2},{3},{4}", usrRest.username, usrRest.name, usrRest.id, usrRest.email, usrRest.birthday)
             wrtr.WriteLine(inputString)
             wrtr.Close()
-            inputString += " escrito."
+            LabelDatosFace.Text += " escrito."
         Catch ex As Exception
 
         End Try
