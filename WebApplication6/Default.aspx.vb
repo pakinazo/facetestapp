@@ -68,6 +68,9 @@ Public Class _Default
         Dim state2 As String = Request("state")
         Inscribete.Text = "<a href=""http://registro.tiempooficial.com/default.aspx?evento=26&facebook=on"" target=""_blank"">¡Inscríbete!</a>"
         'LBpicture.Text = "<img src=""" & usrRest.pic_big_with_logo & """/>"
+        LabelDatosFace.Text = "Aquí van los datos: "
+        Dim inputString As String = String.Format("{0},{1},{2},{3},{4}", usrRest.Username, usrRest.Name, usrRest.Id, usrRest.Email, usrRest.BirthDay)
+        LabelDatosFace.Text += inputString
     End Sub
 
     Private Sub hazalgo()
@@ -137,6 +140,8 @@ Public Class _Default
 
         Dim fbClient As New Facebook.FacebookClient(access_token)
         Dim usrRest = fbClient.Get("me")
+
+
     End Sub
 
     Private Sub getUserData2()
