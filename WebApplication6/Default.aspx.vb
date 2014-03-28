@@ -69,7 +69,7 @@ Public Class _Default
         Inscribete.Text = "<a href=""http://registro.tiempooficial.com/default.aspx?evento=26&facebook=on"" target=""_blank"">¡Inscríbete!</a>"
         'LBpicture.Text = "<img src=""" & usrRest.pic_big_with_logo & """/>"
         LabelDatosFace.Text = "Aquí van los datos: "
-        Dim inputString As String = String.Format("{0},{1},{2},{3},{4}", usrRest.username, usrRest.name, usrRest.id, usrRest.email, usrRest.birthDay)
+        Dim inputString As String = String.Format("{0},{1},{2},{3},{4}", usrRest.username, usrRest.name, usrRest.id, usrRest.email, usrRest.birthday)
         LabelDatosFace.Text += inputString
     End Sub
 
