@@ -64,6 +64,7 @@ Public Class _Default
 
 
         LBNombre.Text = usrRest.first_name & " mail: " & usrRest.email
+        LBNombre.Text += "access token=" & access_token
         LBpicture.Text = "<img src=""https://graph.facebook.com/" & usrRest.username & "/picture?type=large""/>"
         Dim code2 As String = Request("code")
         Dim state2 As String = Request("state")
