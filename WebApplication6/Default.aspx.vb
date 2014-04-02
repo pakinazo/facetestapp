@@ -92,7 +92,7 @@ Public Class _Default
 
             For Each a As KeyValuePair(Of String, Object) In datosjson.data
                 Dim id = a.Key
-                Dim uid = a.Value.uid
+                Dim uid = a.Value.uid.ToString
                 LabelDatosFace.Text += "uid :" & uid & "."
             Next
 
