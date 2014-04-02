@@ -88,22 +88,32 @@ Public Class _Default
             Dim resultado As Object = fbClient.Get("fql",
           New With {.q = "select uid from user where uid=me()"})
             Dim datos = Newtonsoft.Json.JsonConvert.SerializeObject(resultado, Newtonsoft.Json.Formatting.Indented)
-            Dim datosjson = Newtonsoft.Json.JsonConvert.DeserializeObject(resultado)
 
-            For Each a As KeyValuePair(Of String, Object) In datosjson.data
-                Dim id = a.Key
-                Dim uid = a.Value.uid.ToString
-                LabelDatosFace.Text += "uid :" & uid & "."
-            Next
 
-            LabelDatosFace.Text += "text :" & datos & "."
-            'For Each res In datos
-            '    LabelDatosFace.Text += "*" & res.uid & "*"
+
+            Dim ressult = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
+
+            Dim datosjson = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of obJson))(resultado)
+
+            'For Each a As KeyValuePair(Of String, Object) In datosjson
+            '    Dim id = a.Key
+            '    Dim uid = a.Value.uid.ToString
+            '    LabelDatosFace.Text += "uid :" & uid & "."
             'Next
+
+            Dim resulta As List(Of obJson) = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of obJson))(ressult)
+            For Each a In resulta
+                Dim x = a.data.Count
+                LabelDatosFace.Text += "count :" & x & "."
+            Next
+                LabelDatosFace.Text += "text :" & datos & "."
+                'For Each res In datos
+                '    LabelDatosFace.Text += "*" & res.uid & "*"
+                'Next
         Catch ex As Exception
             LabelDatosFace.Text += ex.Message.ToString
         End Try
-        
+
 
 
         Try
@@ -127,7 +137,7 @@ Public Class _Default
                 ' URL 
                 Dim wc As System.Net.WebClient = New System.Net.WebClient()
                 Dim response As Byte() = wc.DownloadData(fileName)
-                sContents = System.Text.Encoding.ASCII.GetString(Response)
+                sContents = System.Text.Encoding.ASCII.GetString(response)
 
 
             Else
@@ -139,7 +149,7 @@ Public Class _Default
         Catch ex As Exception
             sContents = "unable to connect to server "
         End Try
-        
+
 
         Return sContents
     End Function
@@ -236,4 +246,15 @@ Public Class _Default
         Dim fbClient As New Facebook.FacebookClient(access_token)
         Dim usrRest = fbClient.Get("me")
     End Sub
+End Class
+
+Class obJson
+    Public Property data As List(Of valores)
+    'public IDictionary(Of string, valores)  
+End Class
+
+Class valores
+    Public Property uid
+    'public long pageid { get; set; }
+    'public string title { get; set; }
 End Class
