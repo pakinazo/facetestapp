@@ -103,7 +103,7 @@ Public Class _Default
                 Where p.uid = "1534584407"
                 Select p.uid, p.username
 
-            Dim amigos2 As Friends =
+            Dim amigos2 =
                 From p In facebookFriends.data
                 Where Not (From o In facebookFriends.data
                         Select o.uid).Contains(p.uid)
