@@ -95,18 +95,20 @@ Public Class _Default
             LabelDatosFace.Text += datos
             'Dim datosjson = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of obJson))(datos)
             LabelDatosFace.Text += "algo"
-            For Each a As KeyValuePair(Of String, Object) In ressult.data
-                Dim id = a.Key
-                LabelDatosFace.Text += "id :" & id & "."
-                Dim uid = a.Value.uid.ToString
-                LabelDatosFace.Text += "uid :" & uid & "."
-            Next
+            'For Each a As KeyValuePair(Of String, Object) In ressult.data
+            '    Dim id = a.Key
+            '    LabelDatosFace.Text += "id :" & id & "."
+            '    Dim uid = a.Value.uid.ToString
+            '    LabelDatosFace.Text += "uid :" & uid & "."
+            'Next
 
-            'Dim resulta As obJson = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
+            Dim resulta As List(Of obJson) = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
+            LabelDatosFace.Text += "count :" & resulta.Count & "."
             'For Each a In resulta.data
             '    Dim x = a.uid
             '    LabelDatosFace.Text += "count :" & x & "."
             'Next
+
             LabelDatosFace.Text += "text :" & datos & "."
             'For Each res In datos
             '    LabelDatosFace.Text += "*" & res.uid & "*"
@@ -255,7 +257,7 @@ Class obJson
 End Class
 
 Class valores
-    Public Property uid
+    Public Property uid As String
     'public long pageid { get; set; }
     'public string title { get; set; }
 End Class
