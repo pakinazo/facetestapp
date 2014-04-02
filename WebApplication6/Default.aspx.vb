@@ -84,13 +84,17 @@ Public Class _Default
         'LabelDatosFace.Text += fql_multiquery_url
         'LabelDatosFace.Text += "(" & fql_multiquery_obj & ")"
 
-
-        Dim resultado As Object = fbClient.Get("fql",
+        Try
+            Dim resultado As Object = fbClient.Get("fql",
           New With {.q = "select uid from user where uid=me()"})
-        LabelDatosFace.Text += resultado
-        For Each res In resultado
-            LabelDatosFace.Text += "*" & res.uid & "*"
-        Next
+            LabelDatosFace.Text += resultado
+            For Each res In resultado
+                LabelDatosFace.Text += "*" & res.uid & "*"
+            Next
+        Catch ex As Exception
+            LabelDatosFace.Text += ex.Message.ToString
+        End Try
+        
 
 
         Try
