@@ -1,6 +1,7 @@
 ﻿Option Strict Off
 Imports System.Net
 Imports System.IO
+Imports System.Web.Script.Serialization
 
 
 Public Class _Default
@@ -87,12 +88,16 @@ Public Class _Default
         Try
             Dim resultado As Object = fbClient.Get("fql",
           New With {.q = "select uid from user where uid=me()"})
-            Dim datos = Newtonsoft.Json.JsonConvert.SerializeObject(resultado, Newtonsoft.Json.Formatting.Indented)
+            ''Dim datos = Newtonsoft.Json.JsonConvert.SerializeObject(resultado, Newtonsoft.Json.Formatting.Indented)
 
+            Dim facebookFriends As Friends = New JavaScriptSerializer().Deserialize(Of Friends)(resultado)
+            For Each item In facebookFriends.data
+                LabelDatosFace.Text += String.Format("id: {0}, name: {1}", item.uid, item.username)
+                Console.WriteLine("id: {0}, name: {1}", item.uid, item.username)
+            Next
 
-
-            Dim ressult = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
-            LabelDatosFace.Text += datos
+            ''Dim ressult = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
+            ''LabelDatosFace.Text += datos
             'Dim datosjson = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of obJson))(datos)
             LabelDatosFace.Text += "algo"
             'For Each a As KeyValuePair(Of String, Object) In ressult.data
@@ -102,14 +107,14 @@ Public Class _Default
             '    LabelDatosFace.Text += "uid :" & uid & "."
             'Next
 
-            Dim resulta As List(Of obJson) = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
-            LabelDatosFace.Text += "count :" & resulta.Count & "."
+            '' Dim resulta As List(Of obJson) = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
+            ''LabelDatosFace.Text += "count :" & resulta.Count & "."
             'For Each a In resulta.data
             '    Dim x = a.uid
             '    LabelDatosFace.Text += "count :" & x & "."
             'Next
 
-            LabelDatosFace.Text += "text :" & datos & "."
+            ''LabelDatosFace.Text += "text :" & datos & "."
             'For Each res In datos
             '    LabelDatosFace.Text += "*" & res.uid & "*"
             'Next
@@ -260,4 +265,39 @@ Class valores
     Public Property uid As String
     'public long pageid { get; set; }
     'public string title { get; set; }
+End Class
+
+
+Public Class Friends
+
+    Public Property data() As List(Of FacebookFriend)
+        Get
+            Return m_data
+        End Get
+        Set(value As List(Of FacebookFriend))
+            m_data = value
+        End Set
+    End Property
+    Private m_data As List(Of FacebookFriend)
+End Class
+Public Class FacebookFriend
+
+    Public Property uid() As String
+        Get
+            Return m_uid
+        End Get
+        Set(value As String)
+            m_uid = value
+        End Set
+    End Property
+    Private m_uid As String
+    Public Property username() As String
+        Get
+            Return m_username
+        End Get
+        Set(value As String)
+            m_username = value
+        End Set
+    End Property
+    Private m_username As String
 End Class
