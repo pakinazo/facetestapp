@@ -88,7 +88,15 @@ Public Class _Default
             Dim resultado As Object = fbClient.Get("fql",
           New With {.q = "select uid from user where uid=me()"})
             Dim datos = Newtonsoft.Json.JsonConvert.SerializeObject(resultado, Newtonsoft.Json.Formatting.Indented)
-            LabelDatosFace.Text += datos
+            Dim datosjson = Newtonsoft.Json.JsonConvert.DeserializeObject(resultado)
+
+            For Each a As KeyValuePair(Of String, Object) In datosjson.data
+                Dim id = a.Key
+                Dim uid = a.Value.uid
+                LabelDatosFace.Text += "uid :" & uid & "."
+            Next
+
+            LabelDatosFace.Text += "text :" & datos & "."
             'For Each res In datos
             '    LabelDatosFace.Text += "*" & res.uid & "*"
             'Next
