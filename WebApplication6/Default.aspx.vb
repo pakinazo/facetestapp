@@ -74,7 +74,7 @@ Public Class _Default
         Inscribete.Text = "<a href=""http://registro.tiempooficial.com/default.aspx?evento=26&facebook=on"" target=""_blank"">¡Inscríbete!</a>"
         'LBpicture.Text = "<img src=""" & usrRest.pic_big_with_logo & """/>"
         LabelDatosFace.Text = "Aquí van los datos: "
-        Dim inputString As String = String.Format("{0},{1},{2},{3},{4}", usrRest.username, usrRest.name, usrRest.id, usrRest.email, usrRest.birthday_date)
+        Dim inputString As String = String.Format("{0},{1},{2},{3},{4}", usrRest.username, usrRest.name, usrRest.id, usrRest.email, usrRest.birthday)
         LabelDatosFace.Text += inputString
 
         'Dim fql_multiquery_url = "https://graph.facebook.com/fql?q=SELECT%20uid2%20FROM%20friend%20WHERE%20uid1=me()&access_token=" & access_token
@@ -85,33 +85,17 @@ Public Class _Default
         'LabelDatosFace.Text += fql_multiquery_url
         'LabelDatosFace.Text += "(" & fql_multiquery_obj & ")"
 
-        'Para ver los amigos que usan la app y que tienen registros
         Try
             Dim resultado As Object = fbClient.Get("fql",
           New With {.q = "SELECT uid, username FROM user " & _
                          "WHERE is_app_user = 1 AND uid IN (SELECT uid2 FROM friend WHERE uid1 = me())"})
+
             Dim datos As String = New JavaScriptSerializer().Serialize(resultado)
             Dim facebookFriends As Friends = New JavaScriptSerializer().Deserialize(Of Friends)(datos)
             For Each item In facebookFriends.data
                 LabelDatosFace.Text += String.Format("id: {0}, name: {1}", item.uid, item.username)
                 Console.WriteLine("id: {0}, name: {1}", item.uid, item.username)
             Next
-
-            Dim amigos =
-                From p In facebookFriends.data
-                Where p.uid = "1534584407"
-                Select p.uid, p.username
-
-            For Each d In amigos
-                LabelDatosFace.Text += "***" & d.uid & "-" & d.username & "***"
-            Next
-            
-            'For Each item In resultado.data
-            '    LabelDatosFace.Text += String.Format("id: {0}, name: {1}", item.uid, item.username)
-            'Next
-
-
-
 
             ''Dim ressult = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
             ''LabelDatosFace.Text += datos
@@ -273,16 +257,16 @@ Public Class _Default
     End Sub
 End Class
 
-'Class obJson
-'    Public Property data As List(Of valores)
-'    'public IDictionary(Of string, valores)  
-'End Class
+Class obJson
+    Public Property data As List(Of valores)
+    'public IDictionary(Of string, valores)  
+End Class
 
-'Class valores
-'    Public Property uid As String
-'    'public long pageid { get; set; }
-'    'public string title { get; set; }
-'End Class
+Class valores
+    Public Property uid As String
+    'public long pageid { get; set; }
+    'public string title { get; set; }
+End Class
 
 
 Public Class Friends
