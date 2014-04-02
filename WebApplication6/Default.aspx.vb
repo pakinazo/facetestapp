@@ -1,5 +1,7 @@
-﻿Imports System.Net
+﻿Option Strict Off
+Imports System.Net
 Imports System.IO
+
 
 Public Class _Default
     Inherits Page
@@ -74,19 +76,21 @@ Public Class _Default
         Dim inputString As String = String.Format("{0},{1},{2},{3},{4}", usrRest.username, usrRest.name, usrRest.id, usrRest.email, usrRest.birthday)
         LabelDatosFace.Text += inputString
 
-        Dim fql_multiquery_url = "https://graph.facebook.com/fql?q=SELECT%20uid2%20FROM%20friend%20WHERE%20uid1=me()&access_token=" & access_token
+        'Dim fql_multiquery_url = "https://graph.facebook.com/fql?q=SELECT%20uid2%20FROM%20friend%20WHERE%20uid1=me()&access_token=" & access_token
 
-        'Dim fql_multiquery_url = "https://graph.facebook.com/fql?q={""all+friends"":""SELECT+uid2+FROM+friend+WHERE+uid1=me()"",my+name"":""SELECT+name+FROM+user+WHERE+uid=me()""}&" + access_token
-        Dim fql_multiquery_result = file_get_contents(fql_multiquery_url)
-        Dim fql_multiquery_obj = Newtonsoft.Json.JsonConvert.SerializeObject(fql_multiquery_result, Newtonsoft.Json.Formatting.Indented)
-        LabelDatosFace.Text += fql_multiquery_url
-        LabelDatosFace.Text += "(" & fql_multiquery_obj & ")"
-        'Dim resultado As Object = fbClient.Get("fql",
-        '    New With {.q = "SELECT uid FROM user WHERE uid=me()"})
-        'LabelDatosFace.Text += resultado
-        'For Each res In resultado
-        '    LabelDatosFace.Text += "*" & res.uid & "*"
-        'Next
+        ''Dim fql_multiquery_url = "https://graph.facebook.com/fql?q={""all+friends"":""SELECT+uid2+FROM+friend+WHERE+uid1=me()"",my+name"":""SELECT+name+FROM+user+WHERE+uid=me()""}&" + access_token
+        'Dim fql_multiquery_result = file_get_contents(fql_multiquery_url)
+        'Dim fql_multiquery_obj = Newtonsoft.Json.JsonConvert.SerializeObject(fql_multiquery_result, Newtonsoft.Json.Formatting.Indented)
+        'LabelDatosFace.Text += fql_multiquery_url
+        'LabelDatosFace.Text += "(" & fql_multiquery_obj & ")"
+
+
+        Dim resultado As Object = fbClient.Get("fql",
+          New With {.q = "select uid from user where uid=me()"})
+        LabelDatosFace.Text += resultado
+        For Each res In resultado
+            LabelDatosFace.Text += "*" & res.uid & "*"
+        Next
 
 
         Try
