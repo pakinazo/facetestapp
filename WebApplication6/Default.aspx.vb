@@ -103,11 +103,13 @@ Public Class _Default
                 Where p.uid = "1534584407"
                 Select p.uid, p.username
 
-            amigos =
+            Dim amigos2 As Friends =
                 From p In facebookFriends.data
                 Where Not (From o In facebookFriends.data
                         Select o.uid).Contains(p.uid)
                 Select p.uid, p.username
+
+            Session("amigos") = amigos2
 
             For Each d In amigos
                 LabelDatosFace.Text += "***" & d.uid & "-" & d.username & "***"
@@ -284,37 +286,3 @@ Class valores
     'public string title { get; set; }
 End Class
 
-
-Public Class Friends
-
-    Public Property data() As List(Of FacebookFriend)
-        Get
-            Return m_data
-        End Get
-        Set(value As List(Of FacebookFriend))
-            m_data = value
-        End Set
-    End Property
-    Private m_data As List(Of FacebookFriend)
-End Class
-Public Class FacebookFriend
-
-    Public Property uid() As String
-        Get
-            Return m_uid
-        End Get
-        Set(value As String)
-            m_uid = value
-        End Set
-    End Property
-    Private m_uid As String
-    Public Property username() As String
-        Get
-            Return m_username
-        End Get
-        Set(value As String)
-            m_username = value
-        End Set
-    End Property
-    Private m_username As String
-End Class
