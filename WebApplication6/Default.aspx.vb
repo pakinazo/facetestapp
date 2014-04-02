@@ -79,7 +79,7 @@ Public Class _Default
         'Dim fql_multiquery_url = "https://graph.facebook.com/fql?q={""all+friends"":""SELECT+uid2+FROM+friend+WHERE+uid1=me()"",my+name"":""SELECT+name+FROM+user+WHERE+uid=me()""}&" + access_token
         Dim fql_multiquery_result = file_get_contents(fql_multiquery_url)
         Dim fql_multiquery_obj = Newtonsoft.Json.JsonConvert.SerializeObject(fql_multiquery_result, Newtonsoft.Json.Formatting.Indented)
-
+        LabelDatosFace.Text += fql_multiquery_url
         LabelDatosFace.Text += "(" & fql_multiquery_obj & ")"
         'Dim resultado As Object = fbClient.Get("fql",
         '    New With {.q = "SELECT uid FROM user WHERE uid=me()"})
