@@ -1,4 +1,4 @@
-﻿Option Strict Off
+﻿'Option Strict Off
 Imports System.Net
 Imports System.IO
 Imports System.Web.Script.Serialization
@@ -86,13 +86,12 @@ Public Class _Default
         'LabelDatosFace.Text += "(" & fql_multiquery_obj & ")"
 
         Try
-            Dim resultado As Object = fbClient.Get("fql",
-          New With {.q = "select uid from user where uid=me()"})
-            LabelDatosFace.Text += "algo1"
-            Dim datos = Newtonsoft.Json.JsonConvert.SerializeObject(resultado)
-            LabelDatosFace.Text += "algo2"
-            Dim facebookFriends As Friends = New JavaScriptSerializer().Deserialize(Of Friends)(datos)
-            LabelDatosFace.Text += "algo2"
+            Dim resultado As String = fbClient.Get("fql",
+          New With {.q = "SELECT uid, username FROM user " & _
+                         "WHERE is_app_user = 1 AND uid IN (SELECT uid2 FROM friend WHERE uid1 = me())"})
+
+            'Dim datos = Newtonsoft.Json.JsonConvert.SerializeObject(resultado)
+            Dim facebookFriends As Friends = New JavaScriptSerializer().Deserialize(Of Friends)(resultado)
             For Each item In facebookFriends.data
                 LabelDatosFace.Text += String.Format("id: {0}, name: {1}", item.uid, item.username)
                 Console.WriteLine("id: {0}, name: {1}", item.uid, item.username)
