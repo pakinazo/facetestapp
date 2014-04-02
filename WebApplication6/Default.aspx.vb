@@ -90,12 +90,22 @@ Public Class _Default
           New With {.q = "SELECT uid, username FROM user " & _
                          "WHERE is_app_user = 1 AND uid IN (SELECT uid2 FROM friend WHERE uid1 = me())"})
 
-            Dim datos As String = New JavaScriptSerializer().Serialize(resultado)
+            Dim datos As String = Newtonsoft.Json.JsonConvert.SerializeObject(resultado)
             LabelDatosFace.Text += datos
             Dim facebookFriends As Friends = New JavaScriptSerializer().Deserialize(Of Friends)(datos)
             For Each item In facebookFriends.data
                 LabelDatosFace.Text += String.Format("id: {0}, name: {1}", item.uid, item.username)
                 Console.WriteLine("id: {0}, name: {1}", item.uid, item.username)
+            Next
+
+
+            Dim amigos =
+                From p In facebookFriends.data
+                Where p.uid = "1534584407"
+                Select p.uid, p.username
+
+            For Each d In amigos
+                LabelDatosFace.Text += "***" & d.uid & "-" & d.username & "***"
             Next
 
             ''Dim ressult = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
