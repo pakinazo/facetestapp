@@ -74,12 +74,17 @@ Public Class _Default
         Dim inputString As String = String.Format("{0},{1},{2},{3},{4}", usrRest.username, usrRest.name, usrRest.id, usrRest.email, usrRest.birthday)
         LabelDatosFace.Text += inputString
 
-        Dim resultado As Object = fbClient.Get("fql",
-            New With {.q = "SELECT uid FROM user WHERE uid=me()"})
-        LabelDatosFace.Text += resultado
-        For Each res In resultado
-            LabelDatosFace.Text += "*" & res.uid & "*"
-        Next
+        Dim fql_multiquery_url = "https://graph.facebook.com/fql?q={""all+friends"":""SELECT+uid2+FROM+friend+WHERE+uid1=me()"",my+name"":""SELECT+name+FROM+user+WHERE+uid=me()""}&" + access_token
+        Dim fql_multiquery_result = file_get_contents(fql_multiquery_url)
+        Dim fql_multiquery_obj = Newtonsoft.Json.JsonConvert.SerializeObject(fql_multiquery_result, Newtonsoft.Json.Formatting.Indented)
+
+        LabelDatosFace.Text += "(" & fql_multiquery_obj & ")"
+        'Dim resultado As Object = fbClient.Get("fql",
+        '    New With {.q = "SELECT uid FROM user WHERE uid=me()"})
+        'LabelDatosFace.Text += resultado
+        'For Each res In resultado
+        '    LabelDatosFace.Text += "*" & res.uid & "*"
+        'Next
 
 
         Try
@@ -92,6 +97,33 @@ Public Class _Default
 
         End Try
     End Sub
+    Protected Function file_get_contents(ByVal fileName As String) As String
+
+        Dim sContents As String = String.Empty
+        Dim mee As String = String.Empty
+
+        Try
+
+            If (fileName.ToLower().IndexOf("http:") > -1) Then
+                ' URL 
+                Dim wc As System.Net.WebClient = New System.Net.WebClient()
+                Dim response As Byte() = wc.DownloadData(fileName)
+                sContents = System.Text.Encoding.ASCII.GetString(Response)
+
+
+            Else
+                ' Regular Filename 
+                Dim sr As System.IO.StreamReader = New System.IO.StreamReader(fileName)
+                sContents = sr.ReadToEnd()
+                sr.Close()
+            End If
+        Catch ex As Exception
+            sContents = "unable to connect to server "
+        End Try
+        
+
+        Return sContents
+    End Function
 
     Private Sub hazalgo()
         'Dim fbURL As String = String.Format("https://graph.facebook.com/oauth/access_token?client_id={0}&client_secret={2}&code={3}", "294444543985836", MyURL, "0757f6a496872d0d3c02087c183d0c2f", code)
