@@ -91,25 +91,26 @@ Public Class _Default
 
 
 
-            'Dim ressult = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
+            Dim ressult = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
 
-            'Dim datosjson = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of obJson))(resultado)
-
-            'For Each a As KeyValuePair(Of String, Object) In datosjson
-            '    Dim id = a.Key
-            '    Dim uid = a.Value.uid.ToString
-            '    LabelDatosFace.Text += "uid :" & uid & "."
-            'Next
-
-            Dim resulta As obJson = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
-            For Each a In resulta.data
-                Dim x = a.uid
-                LabelDatosFace.Text += "uid :" & x & "."
+            'Dim datosjson = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of obJson))(datos)
+            LabelDatosFace.Text += "algo"
+            For Each a As KeyValuePair(Of String, Object) In ressult.data
+                Dim id = a.Key
+                LabelDatosFace.Text += "id :" & id & "."
+                Dim uid = a.Value.uid.ToString
+                LabelDatosFace.Text += "uid :" & uid & "."
             Next
-                LabelDatosFace.Text += "text :" & datos & "."
-                'For Each res In datos
-                '    LabelDatosFace.Text += "*" & res.uid & "*"
-                'Next
+
+            'Dim resulta As obJson = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
+            'For Each a In resulta.data
+            '    Dim x = a.uid
+            '    LabelDatosFace.Text += "count :" & x & "."
+            'Next
+            LabelDatosFace.Text += "text :" & datos & "."
+            'For Each res In datos
+            '    LabelDatosFace.Text += "*" & res.uid & "*"
+            'Next
         Catch ex As Exception
             LabelDatosFace.Text += ex.Message.ToString
         End Try
