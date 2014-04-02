@@ -76,6 +76,7 @@ Public Class _Default
 
         Dim resultado As Object = fbClient.Get("fql",
             New With {.q = "SELECT uid FROM user WHERE uid=me()"})
+        LabelDatosFace.Text += resultado
         For Each res In resultado
             LabelDatosFace.Text += "*" & res.uid & "*"
         Next
