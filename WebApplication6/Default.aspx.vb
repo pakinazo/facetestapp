@@ -98,10 +98,15 @@ Public Class _Default
                 Console.WriteLine("id: {0}, name: {1}", item.uid, item.username)
             Next
 
-
             Dim amigos =
                 From p In facebookFriends.data
                 Where p.uid = "1534584407"
+                Select p.uid, p.username
+
+            amigos =
+                From p In facebookFriends.data
+                Where Not (From o In facebookFriends.data
+                        Select o.uid).Contains(p.uid)
                 Select p.uid, p.username
 
             For Each d In amigos
