@@ -92,7 +92,7 @@ Public Class _Default
 
 
             Dim ressult = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
-            LabelDatosFace.Text += "datos"
+            LabelDatosFace.Text += datos
             'Dim datosjson = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of obJson))(datos)
             LabelDatosFace.Text += "algo"
             For Each a As KeyValuePair(Of String, Object) In ressult.data
