@@ -87,11 +87,11 @@ Public Class _Default
         Try
             Dim resultado As Object = fbClient.Get("fql",
           New With {.q = "select uid from user where uid=me()"})
-            Newtonsoft.Json.JsonConvert.SerializeObject(resultado, Newtonsoft.Json.Formatting.Indented)
-            LabelDatosFace.Text += resultado
-            For Each res In resultado
-                LabelDatosFace.Text += "*" & res.uid & "*"
-            Next
+            Dim datos = Newtonsoft.Json.JsonConvert.SerializeObject(resultado, Newtonsoft.Json.Formatting.Indented)
+            LabelDatosFace.Text += datos
+            'For Each res In datos
+            '    LabelDatosFace.Text += "*" & res.uid & "*"
+            'Next
         Catch ex As Exception
             LabelDatosFace.Text += ex.Message.ToString
         End Try
