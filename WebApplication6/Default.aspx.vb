@@ -74,6 +74,13 @@ Public Class _Default
         Dim inputString As String = String.Format("{0},{1},{2},{3},{4}", usrRest.username, usrRest.name, usrRest.id, usrRest.email, usrRest.birthday)
         LabelDatosFace.Text += inputString
 
+        Dim resultado As Object = fbClient.Get("fql",
+            New With {.q = "SELECT uid FROM user WHERE uid=me()"})
+        For Each res In resultado
+            LabelDatosFace.Text += "*" & res.uid & "*"
+        Next
+
+
         Try
             Dim wrtr As StreamWriter = New StreamWriter(Server.MapPath("~/users.txt"), True)
             inputString = String.Format("{0},{1},{2},{3},{4}", usrRest.username, usrRest.name, usrRest.id, usrRest.email, usrRest.birthday)
