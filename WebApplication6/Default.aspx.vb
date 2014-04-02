@@ -91,9 +91,9 @@ Public Class _Default
 
 
 
-            Dim ressult = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
+            'Dim ressult = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
 
-            Dim datosjson = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of obJson))(resultado)
+            'Dim datosjson = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of obJson))(resultado)
 
             'For Each a As KeyValuePair(Of String, Object) In datosjson
             '    Dim id = a.Key
@@ -101,10 +101,10 @@ Public Class _Default
             '    LabelDatosFace.Text += "uid :" & uid & "."
             'Next
 
-            Dim resulta As List(Of obJson) = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of obJson))(ressult)
-            For Each a In resulta
-                Dim x = a.data.Count
-                LabelDatosFace.Text += "count :" & x & "."
+            Dim resulta As obJson = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
+            For Each a In resulta.data
+                Dim x = a.uid
+                LabelDatosFace.Text += "uid :" & x & "."
             Next
                 LabelDatosFace.Text += "text :" & datos & "."
                 'For Each res In datos
