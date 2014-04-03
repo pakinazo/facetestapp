@@ -87,14 +87,14 @@ Public Class _Default
 
         Try
             Dim resultado As Object = fbClient.Get("fql",
-          New With {.q = "SELECT uid, username FROM user " & _
+          New With {.q = "SELECT uid, username, first_name, last_name FROM user " & _
                          "WHERE is_app_user = 1 AND uid IN (SELECT uid2 FROM friend WHERE uid1 = me())"})
 
             Dim datos As String = Newtonsoft.Json.JsonConvert.SerializeObject(resultado)
             LabelDatosFace.Text += datos
             Dim facebookFriends As Friends = New JavaScriptSerializer().Deserialize(Of Friends)(datos)
             For Each item In facebookFriends.data
-                LabelDatosFace.Text += String.Format("id: {0}, name: {1}", item.uid, item.username)
+                LabelDatosFace.Text += String.Format("id: {0}, name: {1}", item.uid, item.username, item.first_name, item.last_name)
                 Console.WriteLine("id: {0}, name: {1}", item.uid, item.username)
             Next
 

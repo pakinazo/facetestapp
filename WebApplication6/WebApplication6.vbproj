@@ -324,7 +324,6 @@
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FacebookData.vb" />
     <Compile Include="FacebookFriend.vb" />
     <Compile Include="Friends.vb" />
     <Compile Include="Global.asax.vb">
