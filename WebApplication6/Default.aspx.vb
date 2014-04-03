@@ -113,6 +113,8 @@ Public Class _Default
 
             Session("amigosConResultados") = friendsWithResults
 
+            
+
             For Each d In amigos
                 LabelDatosFace.Text += "***" & d.uid & "-" & d.username & "***"
             Next
