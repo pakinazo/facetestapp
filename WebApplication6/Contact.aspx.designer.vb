@@ -21,4 +21,13 @@ Partial Public Class Contact
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents amigos As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LBerror control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBerror As Global.System.Web.UI.WebControls.Label
 End Class

@@ -7,6 +7,7 @@
     </hgroup>
     <div>
         <asp:Label ID="amigos" runat="server" Text=""></asp:Label> 
+         <asp:Label ID="LBerror" runat="server" Text=""></asp:Label> 
     </div>
     <section class="contact">
         <header>
