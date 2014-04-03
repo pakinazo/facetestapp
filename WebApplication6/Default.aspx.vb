@@ -105,16 +105,27 @@ Public Class _Default
                 Where p.uid = "1534584407"
                 Select p.uid, p.username
 
-            Dim friendsWithResults As System.Linq.IQueryable(Of FacebookFriend) =
+            Dim friendsWithResults =
                 From p In facebookFriends.data
                 Where (From o In facebookFriends.data
                         Select o.uid).Contains(p.uid)
                 Select p.uid, p.username
-                
 
-            Session("amigosConResultados") = friendsWithResults
+            Dim fArray(friendsWithResults.Count - 1) As FacebookFriend
+            Dim c As Integer = 0
 
-            
+            For Each a In friendsWithResults
+                Dim ffriend As New FacebookFriend
+                ffriend.uid = friendsWithResults.ElementAt(c).uid
+                ffriend.username = friendsWithResults.ElementAt(c).username
+                fArray(c) = ffriend
+                c += 1
+            Next
+
+
+            Session("amigosConResultados") = fArray
+
+
 
             For Each d In amigos
                 LabelDatosFace.Text += "***" & d.uid & "-" & d.username & "***"

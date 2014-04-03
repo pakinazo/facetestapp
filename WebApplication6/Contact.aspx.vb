@@ -4,9 +4,9 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         Try
 
-            Dim _amigos As System.Linq.IQueryable(Of FacebookFriend) = Session("amigosConResultados")
+            Dim _amigos() As FacebookFriend = Session("amigosConResultados")
             For Each a In _amigos
-                amigos.Text &= a.uid & " " & a.first_name & a.last_name & " - "
+                amigos.Text &= a.uid & " " & a.username & " - "
             Next
 
         Catch ex As Exception
