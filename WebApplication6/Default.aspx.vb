@@ -105,11 +105,12 @@ Public Class _Default
                 Where p.uid = "1534584407"
                 Select p.uid, p.username
 
-            Dim friendsWithResults =
+            Dim friendsWithResults As System.Linq.IQueryable(Of FacebookFriend) =
                 From p In facebookFriends.data
                 Where (From o In facebookFriends.data
                         Select o.uid).Contains(p.uid)
                 Select p.uid, p.username
+                
 
             Session("amigosConResultados") = friendsWithResults
 
