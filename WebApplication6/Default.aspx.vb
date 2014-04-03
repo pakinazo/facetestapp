@@ -111,19 +111,17 @@ Public Class _Default
                         Select o.uid).Contains(p.uid)
                 Select p.uid, p.username
 
-            Dim fArray(friendsWithResults.Count - 1) As FacebookFriend
-            Dim c As Integer = 0
+            Dim fList As New List(Of FacebookFriend)
 
             For Each a In friendsWithResults
                 Dim ffriend As New FacebookFriend
-                ffriend.uid = friendsWithResults.ElementAt(c).uid
-                ffriend.username = friendsWithResults.ElementAt(c).username
-                fArray(c) = ffriend
-                c += 1
+                ffriend.uid = a.uid
+                ffriend.username = a.username
+                fList.Add(ffriend)
             Next
 
 
-            Session("amigosConResultados") = fArray
+            Session("amigosConResultados") = fList
 
 
 
