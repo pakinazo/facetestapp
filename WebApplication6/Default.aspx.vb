@@ -105,19 +105,19 @@ Public Class _Default
                 Where p.uid = "1534584407"
                 Select p.uid, p.username
 
-            Dim amigos2 =
+            Dim friendsWithResults =
                 From p In facebookFriends.data
                 Where (From o In facebookFriends.data
                         Select o.uid).Contains(p.uid)
                 Select p.uid, p.username
 
-            Session("amigos") = amigos2
+            Session("amigosConResultados") = friendsWithResults
 
             For Each d In amigos
                 LabelDatosFace.Text += "***" & d.uid & "-" & d.username & "***"
             Next
 
-            For Each d In amigos2
+            For Each d In friendsWithResults
                 LabelDatosFace.Text += "**TODOS:" & d.uid & "-" & d.username & ":TODOS**"
             Next
 

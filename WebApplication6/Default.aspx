@@ -38,4 +38,5 @@
             <a href="http://go.microsoft.com/fwlink/?LinkId=245143">Learn more…</a>
         </li>
     </ol>
+    <asp:HyperLink  ID="LinkButton2" runat="server">contact.aspx</asp:HyperLink>
 </asp:Content>

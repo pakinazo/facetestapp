@@ -5,7 +5,9 @@
         <h1><%: Title %>.</h1>
         <h2>Your contact page.</h2>
     </hgroup>
-
+    <div>
+        <asp:Label ID="amigos" runat="server" Text=""></asp:Label> 
+    </div>
     <section class="contact">
         <header>
             <h3>Phone:</h3>
