@@ -98,6 +98,8 @@ Public Class _Default
                 Console.WriteLine("id: {0}, name: {1}", item.uid, item.username)
             Next
 
+
+
             Dim amigos =
                 From p In facebookFriends.data
                 Where p.uid = "1534584407"
@@ -105,7 +107,7 @@ Public Class _Default
 
             Dim amigos2 =
                 From p In facebookFriends.data
-                Where Not (From o In facebookFriends.data
+                Where (From o In facebookFriends.data
                         Select o.uid).Contains(p.uid)
                 Select p.uid, p.username
 
@@ -113,6 +115,10 @@ Public Class _Default
 
             For Each d In amigos
                 LabelDatosFace.Text += "***" & d.uid & "-" & d.username & "***"
+            Next
+
+            For Each d In amigos2
+                LabelDatosFace.Text += "**TODOS:" & d.uid & "-" & d.username & ":TODOS**"
             Next
 
             ''Dim ressult = Newtonsoft.Json.JsonConvert.DeserializeObject(datos)
