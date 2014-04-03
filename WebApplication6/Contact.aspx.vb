@@ -6,8 +6,10 @@
 
             Dim _amigos As List(Of FacebookFriend) = Session("amigosConResultados")
             For Each a In _amigos
-                amigos.Text &= a.uid & " " & a.username & " - "
+                amigos.Text &= a.uid & " " & a.username & " - <br/>"
+                amigos.Text &= String.Format("<img src=""https://graph.facebook.com/{0}/picture?type=small"">   {1} <br/>", a.uid, a.username)
             Next
+
 
         Catch ex As Exception
             LBerror.Text = ex.ToString
