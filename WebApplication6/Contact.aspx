@@ -6,7 +6,9 @@
         <h2>Your contact page.</h2>
     </hgroup>
     <div>
+        <table>
         <asp:Label ID="amigos" runat="server" Text=""></asp:Label> 
+        </table>
          <asp:Label ID="LBerror" runat="server" Text=""></asp:Label> 
     </div>
     <section class="contact">
