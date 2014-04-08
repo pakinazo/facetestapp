@@ -39,4 +39,15 @@
         End Set
     End Property
     Private m_last_name As String
+
+    Public Property email() As String
+        Get
+            Return m_email
+        End Get
+        Set(value As String)
+            m_email = value
+        End Set
+    End Property
+    Private m_email As String
+
 End Class

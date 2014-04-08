@@ -109,7 +109,7 @@ Public Class _Default
                 From p In facebookFriends.data
                 Where (From o In facebookFriends.data
                         Select o.uid).Contains(p.uid)
-                Select p.uid, p.username
+                Select p.uid, p.username, p.first_name, p.last_name, p.email
 
             Dim fList As New List(Of FacebookFriend)
 
@@ -117,6 +117,9 @@ Public Class _Default
                 Dim ffriend As New FacebookFriend
                 ffriend.uid = a.uid
                 ffriend.username = a.username
+                ffriend.first_name = a.first_name
+                ffriend.last_name = a.last_name
+                ffriend.email = a.email
                 fList.Add(ffriend)
             Next
 
