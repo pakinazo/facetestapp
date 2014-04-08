@@ -19,6 +19,7 @@
                 amigos.Text &= String.Format("<tr><td><a href=""HistorialDeCarreras.aspx?IdResultado={1}""><img src=""https://graph.facebook.com/{0}/picture?type=square""></a></td><td><a href=""HistorialDeCarreras.aspx?IdResultado={1}"">{2} {3} </a></td></tr>", a.uid, a.email, a.first_name, a.last_name)
                 amigos.Text &= String.Format("<tr><td><a href=""HistorialDeCarreras.aspx?IdResultado={1}""><img src=""https://graph.facebook.com/{0}/picture?type=square""></a></td><td><a href=""HistorialDeCarreras.aspx?IdResultado={1}"">{2} {3} </a></td></tr>", a.uid, a.email, a.first_name, a.last_name)
                 amigos.Text &= String.Format("<tr><td><a href=""HistorialDeCarreras.aspx?IdResultado={1}""><img src=""https://graph.facebook.com/{0}/picture?type=square""></a></td><td><a href=""HistorialDeCarreras.aspx?IdResultado={1}"">{2} {3} </a></td></tr>", a.uid, a.email, a.first_name, a.last_name)
+                amigos.Text &= String.Format("<tr><td><a href=""HistorialDeCarreras.aspx?IdResultado={1}""><img src=""https://graph.facebook.com/{0}/picture?type=square""></a></td><td><a href=""HistorialDeCarreras.aspx?IdResultado={1}"">{2} {3} </a></td></tr>", a.uid, a.email, a.first_name, a.last_name)
 
                 
             Next
