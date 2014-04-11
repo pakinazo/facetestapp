@@ -113,15 +113,16 @@ Public Class _Default
 
             Dim fList As New List(Of FacebookFriend)
 
-            For Each a In friendsWithResults
-                Dim ffriend As New FacebookFriend
-                ffriend.uid = a.uid
-                ffriend.username = a.username
-                ffriend.first_name = a.first_name
-                ffriend.last_name = a.last_name
-                ffriend.email = a.email
-                fList.Add(ffriend)
-            Next
+            'DESCOMENTAR
+            'For Each a In friendsWithResults
+            '    Dim ffriend As New FacebookFriend
+            '    ffriend.uid = a.uid
+            '    ffriend.username = a.username
+            '    ffriend.first_name = a.first_name
+            '    ffriend.last_name = a.last_name
+            '    ffriend.email = a.email
+            '    fList.Add(ffriend)
+            'Next
 
 
             Session("amigosConResultados") = fList
