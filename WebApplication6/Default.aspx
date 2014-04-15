@@ -44,7 +44,7 @@
 <a href='#' onclick="FacebookInviteFriends();"> 
 Facebook Invite Friends Link
 </a>
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
+    <script src="https://connect.facebook.net/en_US/all.js"></script>
 
 <script>
     FB.init({
