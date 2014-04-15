@@ -88,7 +88,10 @@ Public Class _Default
         Try
             Dim resultado As Object = fbClient.Get("fql",
           New With {.q = "SELECT uid, username, first_name, last_name FROM user " & _
-                         "WHERE is_app_user = 1 AND uid IN (SELECT uid2 FROM friend WHERE uid1 = me())"})
+                         "WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me())"})
+            'New With {.q = "SELECT uid, username, first_name, last_name FROM user " & _
+            '             "WHERE is_app_user = 1 AND uid IN (SELECT uid2 FROM friend WHERE uid1 = me())"})
+
 
             Dim datos As String = Newtonsoft.Json.JsonConvert.SerializeObject(resultado)
             LabelDatosFace.Text += datos

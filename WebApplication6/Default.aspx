@@ -57,7 +57,7 @@ Facebook Invite Friends Link
     function FacebookInviteFriends() {
         FB.ui({
             method: 'apprequests',
-            message: 'Your Message diaolog'
+            message: 'Prueba la nueva App!'
         });
     }
 </script>
