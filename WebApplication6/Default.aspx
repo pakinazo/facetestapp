@@ -39,4 +39,26 @@
         </li>
     </ol>
     <asp:HyperLink  ID="LinkButton2" runat="server">contact.aspx</asp:HyperLink>
+ 
+<div id="fb-root"></div>
+<a href='#' onclick="FacebookInviteFriends();"> 
+Facebook Invite Friends Link
+</a>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+
+<script>
+    FB.init({
+        appId: '779337262082870',
+        cookie: true,
+        status: true,
+        xfbml: true
+    });
+
+    function FacebookInviteFriends() {
+        FB.ui({
+            method: 'apprequests',
+            message: 'Your Message diaolog'
+        });
+    }
+</script>
 </asp:Content>
