@@ -18,6 +18,8 @@
             Dim msg As String = String.Format("/{0}/primerCanvazazo:Registrar", "pakinazo.zazo")
             Dim kk As Object = fbclient.Post(msg, act)
             respuesta.Text = kk.id
+            respuesta.Text &= " " & kk.from.id
+            respuesta.Text &= " " & kk.from.name
 
         Catch ex As Exception
             respuesta.Text &= ex.Message.ToString
