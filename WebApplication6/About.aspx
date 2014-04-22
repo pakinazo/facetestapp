@@ -31,4 +31,5 @@
             <li><a runat="server" href="~/Contact.aspx">Contact</a></li>
         </ul>
     </aside>
+    <asp:Label ID ="respuesta" runat="server" ></asp:Label>
 </asp:Content>
