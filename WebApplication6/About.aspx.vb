@@ -16,8 +16,8 @@ Public Class About
             act("access_token") = result.access_token
 
             act("article") = "http://rubyatika.wordpress.com/2014/04/03/nak-rangsang-anak-bercakap/"
-
-            Dim msg As String = String.Format("/{0}/primerCanvazazo:Registrar", "pakinazo.zazo")
+            Dim usrRest = fbclient.Get("me")
+            Dim msg As String = String.Format("/{0}/primerCanvazazo:Registrar", usrRest.username)
             Dim kk As Object = fbclient.Post(msg, act)
             respuesta.Text = kk.id
       
