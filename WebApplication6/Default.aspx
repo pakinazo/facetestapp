@@ -18,7 +18,7 @@
         <li class="one">
             <h5><asp:Label runat="server" ID="LBNombre" Text ="default"></asp:Label></h5>
             <asp:Label runat="server" ID="LBpicture"></asp:Label>
-            Es un periódico digital local, raeremos noticias de tu ciudad al instante, no puedes dejar pasar esta oportunidad! <a href="http://go.microsoft.com/fwlink/?LinkId=245146">Learn more…</a>
+            Es un periódico digital local, raeremos noticias de tu ciudad al instante, no puedes dejar pasar esta oportunidad! <a href="www.mundodexalapa.com">Visita otros periódicos</a>
         </li>
         <li class="two">
             <asp:Label Text="text" runat="server" id="Inscribete"/>
