@@ -1,4 +1,6 @@
-﻿Public Class About
+﻿Imports System.Web.Script.Serialization
+
+Public Class About
     Inherits Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
@@ -18,8 +20,12 @@
             Dim msg As String = String.Format("/{0}/primerCanvazazo:Registrar", "pakinazo.zazo")
             Dim kk As Object = fbclient.Post(msg, act)
             respuesta.Text = kk.id
-            respuesta.Text &= " " & kk.from.id
-            respuesta.Text &= " " & kk.from.name
+      
+            Dim jsonSerialized As String = Newtonsoft.Json.JsonConvert.SerializeObject(kk)
+            Dim datos = New JavaScriptSerializer().Deserialize(Of Object)(jsonSerialized)
+
+            respuesta.Text &= " " & datos.from.id
+            respuesta.Text &= " " & datos.from.name
 
         Catch ex As Exception
             respuesta.Text &= ex.Message.ToString
