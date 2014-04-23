@@ -31,15 +31,15 @@
         </header>
         <p>
             <span class="label">Support:</span>
-            <span><a href="mailto:Support@example.com">Support@example.com</a></span>
+            <span><a href="mailto:Support@example.com">chavodel8x@hotmail.com</a></span>
         </p>
         <p>
             <span class="label">Marketing:</span>
-            <span><a href="mailto:Marketing@example.com">Marketing@example.com</a></span>
+            <span><a href="mailto:Marketing@example.com">chavodel8x@hotmail.com</a></span>
         </p>
         <p>
             <span class="label">General:</span>
-            <span><a href="mailto:General@example.com">General@example.com</a></span>
+            <span><a href="mailto:General@example.com">chavodel8x@hotmail.com</a></span>
         </p>
     </section>
 
