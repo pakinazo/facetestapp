@@ -16,17 +16,20 @@ Public Class About
             act("access_token") = result.access_token
 
             act("article") = "http://rubyatika.wordpress.com/2014/04/03/nak-rangsang-anak-bercakap/"
-            Dim usrRest = fbclient.Get("me")
-            Dim msg As String = String.Format("/{0}/primerCanvazazo:Registrar", usrRest.username)
-            Dim kk As Object = fbclient.Post(msg, act)
-            respuesta.Text = kk.id
-      
-            Dim jsonSerialized As String = Newtonsoft.Json.JsonConvert.SerializeObject(kk)
-            'Dim datos = New JavaScriptSerializer().Deserialize(Of Object)(jsonSerialized)
+            
+            If Not Session("username") Is Nothing Then
+                Dim msg As String = String.Format("/{0}/primerCanvazazo:Registrar", Session("username"))
+                Dim kk As Object = fbclient.Post(msg, act)
+                respuesta.Text = kk.id
 
-            respuesta.Text &= " " & jsonSerialized
+                Dim jsonSerialized As String = Newtonsoft.Json.JsonConvert.SerializeObject(kk)
+                'Dim datos = New JavaScriptSerializer().Deserialize(Of Object)(jsonSerialized)
 
-            'respuesta.Text &= " " & datos.from.name
+                respuesta.Text &= " " & jsonSerialized
+
+                'respuesta.Text &= " " & datos.from.name
+            End If
+            
 
         Catch ex As Exception
             respuesta.Text &= ex.Message.ToString

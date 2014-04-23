@@ -64,7 +64,7 @@ Public Class _Default
 
         Dim fbClient As New Facebook.FacebookClient(access_token)
         Dim usrRest = fbClient.Get("me")
-
+        Session("username") = usrRest.username
 
         LBNombre.Text = usrRest.first_name & " mail: " & usrRest.email
         LBNombre.Text += "access token=" & access_token
