@@ -5,7 +5,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="X-Frame-Options" content="allow">
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title>Periodicazo</title>
     <asp:PlaceHolder runat="server">        
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
@@ -39,16 +39,12 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">
-                    <a runat="server" href="~/">your logo here</a></p>
+                    <a runat="server" href="~/">PERIODICAZO!</a></p>
             </div>
             <div class="float-right">
                 <section id="login">
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
-                            <ul>
-                                <li><a id="registerLink" runat="server" href="~/Account/Register.aspx">Register</a></li>
-                                <li><a id="loginLink" runat="server" href="~/Account/Login.aspx">Log in</a></li>
-                            </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <p>

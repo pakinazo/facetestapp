@@ -68,10 +68,11 @@ Public Class _Default
 
         If usrRest.username = "pakinazo.zazo" Or usrRest.username = "susana.gomez.900388" Then
             LBNombre.Text += "access token=" & access_token
+            LBNombre.Text += usrRest.email
             Inscribete.Text = "<a href=""http://registro.tiempooficial.com/default.aspx?evento=26&facebook=on"" target=""_blank"">¡Inscríbete!</a>"
             LabelDatosFace.Visible = True
         End If
-        LBNombre.Text = usrRest.first_name & " mail: " & usrRest.email
+        LBNombre.Text += usrRest.first_name
         LBpicture.Text = "<img src=""https://graph.facebook.com/" & usrRest.username & "/picture?type=large""/>"
         Dim code2 As String = Request("code")
         Dim state2 As String = Request("state")
