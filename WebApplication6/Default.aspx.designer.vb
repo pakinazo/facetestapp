@@ -41,15 +41,6 @@ Partial Public Class _Default
     Protected WithEvents Inscribete As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''LabelDatosFace control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelDatosFace As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''LinkButton2 control.
     '''</summary>
     '''<remarks>
@@ -57,4 +48,13 @@ Partial Public Class _Default
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LinkButton2 As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''LabelDatosFace control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelDatosFace As Global.System.Web.UI.WebControls.Label
 End Class
