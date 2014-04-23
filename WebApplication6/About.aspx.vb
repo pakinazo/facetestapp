@@ -18,18 +18,21 @@ Public Class About
             act("article") = "http://rubyatika.wordpress.com/2014/04/03/nak-rangsang-anak-bercakap/"
             
             If Not Session("username") Is Nothing Then
-                Dim msg As String = String.Format("/{0}/primerCanvazazo:Registrar", Session("username"))
-                Dim kk As Object = fbclient.Post(msg, act)
-                respuesta.Text = kk.id
+                If Session("username") = "pakinazo.zazo" Or Session("username") = "chavalin.delocho" Or Session("username") = "susana.gomez.900388" Then
 
-                Dim jsonSerialized As String = Newtonsoft.Json.JsonConvert.SerializeObject(kk)
-                'Dim datos = New JavaScriptSerializer().Deserialize(Of Object)(jsonSerialized)
+                    Dim msg As String = String.Format("/{0}/primerCanvazazo:Registrar", Session("username"))
+                    Dim kk As Object = fbclient.Post(msg, act)
+                    respuesta.Text = kk.id
 
-                respuesta.Text &= " " & jsonSerialized
+                    Dim jsonSerialized As String = Newtonsoft.Json.JsonConvert.SerializeObject(kk)
+                    'Dim datos = New JavaScriptSerializer().Deserialize(Of Object)(jsonSerialized)
+
+                    respuesta.Text &= " " & jsonSerialized
+                End If
 
                 'respuesta.Text &= " " & datos.from.name
             End If
-            
+
 
         Catch ex As Exception
             respuesta.Text &= ex.Message.ToString

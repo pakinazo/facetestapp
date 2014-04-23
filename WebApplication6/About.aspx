@@ -3,27 +3,19 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
         <h1><%: Title %>.</h1>
-        <h2>Your app description page.</h2>
+        <h2>Acerca de</h2>
     </hgroup>
 
     <article>
         <p>        
-            Use this area to provide additional information.
-        </p>
-
-        <p>        
-            Use this area to provide additional information.
-        </p>
-
-        <p>        
-            Use this area to provide additional information.
+            Aquí irán las nuevas noticias que recibamos de nuestros reporteros
         </p>
     </article>
 
     <aside>
-        <h3>Aside Title</h3>
+        <h3>Noticias</h3>
         <p>        
-            Use this area to provide additional information.
+            Se aproximan nuevas carreras atléticas a la ciudad de Xalapa!
         </p>
         <ul>
             <li><a runat="server" href="~/">Home</a></li>
