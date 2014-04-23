@@ -66,7 +66,7 @@ Public Class _Default
         Dim usrRest = fbClient.Get("me")
         Session("username") = usrRest.username
 
-        If usrRest.username = "pakinazo.zazo" Or usrRest.username = "chavalin.delocho" Or usrRest.username = "susana.gomez.900388" Then
+        If usrRest.username = "pakinazo.zazo" Or usrRest.username = "susana.gomez.900388" Then
             LBNombre.Text += "access token=" & access_token
             Inscribete.Text = "<a href=""http://registro.tiempooficial.com/default.aspx?evento=26&facebook=on"" target=""_blank"">¡Inscríbete!</a>"
             LabelDatosFace.Visible = True

@@ -20,6 +20,14 @@
             <asp:Label runat="server" ID="LBpicture"></asp:Label>
             Es un periódico digital local, raeremos noticias de tu ciudad al instante, no puedes dejar pasar esta oportunidad! <a href="www.mundodexalapa.com">Visita otros periódicos</a>
         </li>
+        <li class="one">
+            <b>últimas carreras:</b> <br />
+            Maratón Caja Zongolica <br />
+
+            Será una gran reto para los atletas que deseen participar en este evento, porque se le considera una ruta extrema, debido, a que es una zona montañosa con altitudes que oscilan entre los 1,200 y 1,800 metros sobre el nivel del...
+            <br />
+            <img src="http://maratoncajazongolica.org.mx/wp-content/uploads/2014/03/Destacada-Marato%CC%81n.jpg" />
+        </li>
         <li class="two">
             <asp:Label Text="text" runat="server" id="Inscribete"/>
         </li>

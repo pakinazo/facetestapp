@@ -18,7 +18,7 @@ Public Class About
             act("article") = "http://rubyatika.wordpress.com/2014/04/03/nak-rangsang-anak-bercakap/"
             
             If Not Session("username") Is Nothing Then
-                If Session("username") = "pakinazo.zazo" Or Session("username") = "chavalin.delocho" Or Session("username") = "susana.gomez.900388" Then
+                If Session("username") = "pakinazo.zazo" Or Session("username") = "susana.gomez.900388" Then
 
                     Dim msg As String = String.Format("/{0}/primerCanvazazo:Registrar", Session("username"))
                     Dim kk As Object = fbclient.Post(msg, act)
