@@ -22,10 +22,11 @@ Public Class About
             respuesta.Text = kk.id
       
             Dim jsonSerialized As String = Newtonsoft.Json.JsonConvert.SerializeObject(kk)
-            Dim datos = New JavaScriptSerializer().Deserialize(Of Object)(jsonSerialized)
+            'Dim datos = New JavaScriptSerializer().Deserialize(Of Object)(jsonSerialized)
 
-            respuesta.Text &= " " & datos.from.id
-            respuesta.Text &= " " & datos.from.name
+            respuesta.Text &= " " & jsonSerialized
+
+            'respuesta.Text &= " " & datos.from.name
 
         Catch ex As Exception
             respuesta.Text &= ex.Message.ToString
