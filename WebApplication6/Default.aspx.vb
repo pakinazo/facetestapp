@@ -67,7 +67,7 @@ Public Class _Default
 
         Try
             Dim sURL As String
-            sURL = "http://www.microsoft.com"
+            sURL = String.Format("https://graph.facebook.com/?id={0}", usrRest.id)
 
             Dim wrGETURL As WebRequest
             wrGETURL = WebRequest.Create(sURL)
@@ -77,7 +77,7 @@ Public Class _Default
             Dim objReader As New StreamReader(objStream)
             Dim strResponse As String = objReader.ReadToEnd()
             objReader.Close()
-            LBDatosPrincipalesFacebook.Text += strResponse
+            LBDatosPrincipalesFacebook.Text += "respuesta: " & strResponse & "!"
             Dim facebookDatos As FacebookDataList = New JavaScriptSerializer().Deserialize(Of FacebookDataList)(strResponse)
             For Each item In facebookDatos.data
                 LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", item.id, item.first_name, item.last_name, item.gender, item.locale, item.link, item.username)
