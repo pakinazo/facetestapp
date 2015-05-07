@@ -1,5 +1,25 @@
 ﻿Public Class FacebookFriend
 
+    Public Property id() As String
+        Get
+            Return m_id
+        End Get
+        Set(value As String)
+            m_id = value
+        End Set
+    End Property
+    Private m_id As String
+
+    Public Property name() As String
+        Get
+            Return m_name
+        End Get
+        Set(value As String)
+            m_name = value
+        End Set
+    End Property
+    Private m_name As String
+
     Public Property uid() As String
         Get
             Return m_uid

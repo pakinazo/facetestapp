@@ -98,10 +98,10 @@ Public Class _Default
             Dim jsonSerialized As String = Newtonsoft.Json.JsonConvert.SerializeObject(_Friends)
             Dim facebookFriends As Friends = New JavaScriptSerializer().Deserialize(Of Friends)(jsonSerialized)
             LBDatosPrincipalesFacebook.Text += " Friends: "
-
+            'modificando clase friends
             For Each item In facebookFriends.data
                 LabelDatosFace.Text += String.Format("id: {0}, name: {1}", item.uid, item.first_name & " " & item.last_name)
-                Console.WriteLine("id: {0}, name: {1}", item.uid, item.username)
+                Console.WriteLine("id: {0}, name: {1}", item.id, item.name)
             Next
 
             'For Each f In _Friends
