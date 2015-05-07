@@ -94,15 +94,24 @@ Public Class _Default
 
             Dim _Friends = fbClient.Get("me/friends")
 
-            LBDatosPrincipalesFacebook.Text += " Friends: "
-            For Each f In _Friends
-                LBDatosPrincipalesFacebook.Text += String.Format("nombre: {0}, apellidos: {1} ", f.first_name, f.last_name)
-                Try
-                    LBDatosPrincipalesFacebook.Text += String.Format("username: {0} <br />", f.username)
-                Catch ex As Exception
 
-                End Try
+            Dim jsonSerialized As String = Newtonsoft.Json.JsonConvert.SerializeObject(_Friends)
+            Dim facebookFriends As Friends = New JavaScriptSerializer().Deserialize(Of Friends)(jsonSerialized)
+            LBDatosPrincipalesFacebook.Text += " Friends: "
+
+            For Each item In facebookFriends.data
+                LabelDatosFace.Text += String.Format("id: {0}, name: {1}", item.uid, item.first_name & " " & item.last_name)
+                Console.WriteLine("id: {0}, name: {1}", item.uid, item.username)
             Next
+
+            'For Each f In _Friends
+            '    LBDatosPrincipalesFacebook.Text += String.Format("nombre: {0}, apellidos: {1} ", f.first_name, f.last_name)
+            '    Try
+            '        LBDatosPrincipalesFacebook.Text += String.Format("username: {0} <br />", f.username)
+            '    Catch ex As Exception
+
+            '    End Try
+            'Next
         Catch ex As Exception
             LBDatosPrincipalesFacebook.Text += ex.Message.ToString
         End Try
