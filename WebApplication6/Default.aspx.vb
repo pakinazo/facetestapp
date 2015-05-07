@@ -65,7 +65,6 @@ Public Class _Default
         Dim fbClient As New Facebook.FacebookClient(access_token)
         Dim usrRest = fbClient.Get("me")
 
-        Try
             Dim sURL As String
             sURL = String.Format("https://graph.facebook.com/?id={0}", usrRest.id)
 
@@ -82,17 +81,15 @@ Public Class _Default
             'Dim item As Object = New JavaScriptSerializer().Deserialize(Of Object)(strResponse)
             'LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", item.id, item.first_name, item.last_name, item.gender, item.locale, item.link, item.username)
 
-            Dim item As FacebookData = New JavaScriptSerializer().Deserialize(Of FacebookData)(strResponse)
-            LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", item.id, item.first_name, item.last_name, item.gender, item.locale, item.link, item.username)
+        Dim itemzazo As FacebookData = New JavaScriptSerializer().Deserialize(Of FacebookData)(strResponse)
+        LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", itemzazo.id, itemzazo.first_name, itemzazo.last_name, itemzazo.gender, itemzazo.locale, itemzazo.link, itemzazo.username)
 
 
             'Dim facebookDatos As FacebookDataList = New JavaScriptSerializer().Deserialize(Of FacebookDataList)(strResponse)
             'For Each item In facebookDatos.data
             '    LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", item.id, item.first_name, item.last_name, item.gender, item.locale, item.link, item.username)
             'Next
-        Catch ex As Exception
-            LBDatosPrincipalesFacebook.Text += ex.Message.ToString
-        End Try
+       
 
 
         Session("username") = usrRest.username
@@ -104,7 +101,7 @@ Public Class _Default
             LabelDatosFace.Visible = True
         End If
         LBNombre.Text += usrRest.first_name
-        LBpicture.Text = "<img src=""https://graph.facebook.com/" & usrRest.username & "/picture?type=large""/>"
+        LBpicture.Text = "<img src=""https://graph.facebook.com/" & itemzazo.username & "/picture?type=large""/>"
         Dim code2 As String = Request("code")
         Dim state2 As String = Request("state")
         'LBpicture.Text = "<img src=""" & usrRest.pic_big_with_logo & """/>"
