@@ -89,18 +89,23 @@ Public Class _Default
             'For Each item In facebookDatos.data
             '    LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", item.id, item.first_name, item.last_name, item.gender, item.locale, item.link, item.username)
             'Next
-       
-        Dim _Friends = fbClient.Get("me/friends")
+        Try
 
-        LBDatosPrincipalesFacebook.Text += " Friends: "
-        For Each f In _Friends
-            LBDatosPrincipalesFacebook.Text += String.Format("nombre: {0}, apellidos: {1} ", f.first_name, f.last_name)
-            Try
-                LBDatosPrincipalesFacebook.Text += String.Format("username: {0} <br />", f.username)
-            Catch ex As Exception
 
-            End Try
-        Next
+            Dim _Friends = fbClient.Get("me/friends")
+
+            LBDatosPrincipalesFacebook.Text += " Friends: "
+            For Each f In _Friends
+                LBDatosPrincipalesFacebook.Text += String.Format("nombre: {0}, apellidos: {1} ", f.first_name, f.last_name)
+                Try
+                    LBDatosPrincipalesFacebook.Text += String.Format("username: {0} <br />", f.username)
+                Catch ex As Exception
+
+                End Try
+            Next
+        Catch ex As Exception
+            LBDatosPrincipalesFacebook.Text += ex.Message.ToString
+        End Try
 
         Session("username") = usrRest.username
 
@@ -128,7 +133,7 @@ Public Class _Default
         'LabelDatosFace.Text += "(" & fql_multiquery_obj & ")"
 
 
-        
+
 
         Try
             Dim resultado As Object = fbClient.Get("fql",
