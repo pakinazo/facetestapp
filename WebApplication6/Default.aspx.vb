@@ -64,6 +64,29 @@ Public Class _Default
 
         Dim fbClient As New Facebook.FacebookClient(access_token)
         Dim usrRest = fbClient.Get("me")
+
+        Try
+            Dim sURL As String
+            sURL = "http://www.microsoft.com"
+
+            Dim wrGETURL As WebRequest
+            wrGETURL = WebRequest.Create(sURL)
+            Dim objStream As Stream
+            objStream = wrGETURL.GetResponse.GetResponseStream()
+
+            Dim objReader As New StreamReader(objStream)
+            Dim strResponse As String = objReader.ReadToEnd()
+            objReader.Close()
+
+            Dim facebookDatos As FacebookDataList = New JavaScriptSerializer().Deserialize(Of FacebookDataList)(strResponse)
+            For Each item In facebookDatos.data
+                LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", item.id, item.first_name, item.last_name, item.gender, item.locale, item.link, item.username)
+            Next
+        Catch ex As Exception
+            LBDatosPrincipalesFacebook.Text += ex.Message.ToString
+        End Try
+
+
         Session("username") = usrRest.username
 
         If usrRest.username = "pakinazo.zazo" Or usrRest.username = "susana.gomez.900388" Then
@@ -88,6 +111,9 @@ Public Class _Default
         'Dim fql_multiquery_obj = Newtonsoft.Json.JsonConvert.SerializeObject(fql_multiquery_result, Newtonsoft.Json.Formatting.Indented)
         'LabelDatosFace.Text += fql_multiquery_url
         'LabelDatosFace.Text += "(" & fql_multiquery_obj & ")"
+
+
+        
 
         Try
             Dim resultado As Object = fbClient.Get("fql",

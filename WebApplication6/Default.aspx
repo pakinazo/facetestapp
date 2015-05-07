@@ -27,6 +27,8 @@
             Será una gran reto para los atletas que deseen participar en este evento, porque se le considera una ruta extrema, debido, a que es una zona montañosa con altitudes que oscilan entre los 1,200 y 1,800 metros sobre el nivel del...
             <br />
             <img src="http://maratoncajazongolica.org.mx/wp-content/uploads/2014/03/Destacada-Marato%CC%81n.jpg" />
+
+            <asp:Label ID="LBDatosPrincipalesFacebook" runat="server"></asp:Label>
         </li>
         <li class="two">
             <asp:Label Text="text" runat="server" id="Inscribete"/>
