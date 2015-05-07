@@ -100,7 +100,7 @@ Public Class _Default
             LBDatosPrincipalesFacebook.Text += " Friends: "
             'modificando clase friends
             For Each item In facebookFriends.data
-                LabelDatosFace.Text += String.Format("id: {0}, name: {1}", item.uid, item.first_name & " " & item.last_name)
+                LabelDatosFace.Text += String.Format("id: {0}, name: {1}", item.id, item.name)
                 Console.WriteLine("id: {0}, name: {1}", item.id, item.name)
             Next
 
