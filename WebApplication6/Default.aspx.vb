@@ -82,7 +82,7 @@ Public Class _Default
             'Dim item As Object = New JavaScriptSerializer().Deserialize(Of Object)(strResponse)
             'LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", item.id, item.first_name, item.last_name, item.gender, item.locale, item.link, item.username)
 
-            Dim item As Object = New JavaScriptSerializer().Deserialize(Of FacebookData)(strResponse)
+            Dim item As FacebookData = New JavaScriptSerializer().Deserialize(Of FacebookData)(strResponse)
             LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", item.id, item.first_name, item.last_name, item.gender, item.locale, item.link, item.username)
 
 
