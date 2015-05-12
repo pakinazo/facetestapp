@@ -99,6 +99,7 @@ Public Class _Default
             Dim facebookFriends As Friends = New JavaScriptSerializer().Deserialize(Of Friends)(jsonSerialized)
             LBDatosPrincipalesFacebook.Text += " Friends: "
             'modificando clase friends
+            LBDatosPrincipalesFacebook.Text += " count: " & facebookFriends.data.Count
             For Each item In facebookFriends.data
                 LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, name: {1}", item.id, item.name)
                 Console.WriteLine("id: {0}, name: {1}", item.id, item.name)
