@@ -5,7 +5,9 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="X-Frame-Options" content="allow">
-     <meta name="description" content="&lt;center>10a. Carrera alggo, Ruta: FDSFDS 2015 5 Kms. &lt;/center>sdad.com &lt;center>Número UNO e&lt;/center>" />
+     <meta name="description" content="100a. Carrera alggo, Ruta: FDSFDS 2015 5 Kms. 
+sdad.com 
+Número UNO" />
     <title>Periodicazo</title>
     <asp:PlaceHolder runat="server">        
         <%: Scripts.Render("~/bundles/modernizr") %>
