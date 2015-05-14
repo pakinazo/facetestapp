@@ -92,7 +92,7 @@ Public Class _Default
         Try
 
 
-            Dim _Friends = fbClient.Get("me/friends")
+            Dim _Friends = fbClient.Get("me/friends?limit=5000")
 
 
             Dim jsonSerialized As String = Newtonsoft.Json.JsonConvert.SerializeObject(_Friends)
