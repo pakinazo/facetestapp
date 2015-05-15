@@ -6,8 +6,8 @@
         Dim Etiqueta As String = "https://www.facebook.com/dialog/share?" & _
                     "app_id=546495888778745" & _
                     "&display=popup" & _
-                    "&href=http://www.lanacion.com.ar/edicion-impresa/suplementos/revista" & _
-                    "&redirect_uri=http://www.lanacion.com.ar/edicion-impresa/suplementos/revista"
+                    "&href=http://pakinazocanvas.apphb.com/Contact.aspx" & _
+                    "&redirect_uri=http://pakinazocanvas.apphb.com/Contact.aspx"
         ResponseHelper.Redirect(Etiqueta, "_blank", "")
     End Sub
 
