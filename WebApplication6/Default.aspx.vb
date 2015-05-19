@@ -119,14 +119,17 @@ Public Class _Default
 
         Session("username") = usrRest.username
 
-        If usrRest.username = "pakinazo.zazo" Or usrRest.username = "susana.gomez.900388" Then
-            LBNombre.Text += "access token=" & access_token
-            LBNombre.Text += usrRest.email
-            Inscribete.Text = "<a href=""http://registro.tiempooficial.com/default.aspx?evento=26&facebook=on"" target=""_blank"">¡Inscríbete!</a>"
-            LabelDatosFace.Visible = True
-        End If
+        'If usrRest.username = "pakinazo.zazo" Or usrRest.username = "susana.gomez.900388" Then
+        '    LBNombre.Text += "access token=" & access_token
+        '    LBNombre.Text += usrRest.email
+        '    Inscribete.Text = "<a href=""http://registro.tiempooficial.com/default.aspx?evento=26&facebook=on"" target=""_blank"">¡Inscríbete!</a>"
+        '    LabelDatosFace.Visible = True
+        'End If
         LBNombre.Text += usrRest.first_name
-        LBpicture.Text = "<img src=""https://graph.facebook.com/" & itemzazo.username & "/picture?type=large""/>"
+        Dim pic As String = String.Format("https://graph.facebook.com/{0}/picture?type={1}&access_token={2}", usrRest.id, "large", access_token)
+
+        LBpicture.Text = "<img src=""" & pic & """/>"
+        'LBpicture.Text = "<img src=""https://graph.facebook.com/" & itemzazo.username & "/picture?type=large""/>"
         Dim code2 As String = Request("code")
         Dim state2 As String = Request("state")
         'LBpicture.Text = "<img src=""" & usrRest.pic_big_with_logo & """/>"
