@@ -126,10 +126,10 @@ Public Class _Default
         '    LabelDatosFace.Visible = True
         'End If
         LBNombre.Text += usrRest.first_name
-        Dim pic As String = String.Format("https://graph.facebook.com/{0}/picture?type={1}&access_token={2}", usrRest.id, "large", access_token)
+        'Dim pic As String = String.Format("https://graph.facebook.com/{0}/picture?type={1}&access_token={2}", usrRest.id, "large", access_token)
+        'Dim pic As String = String.Format("https://graph.facebook.com/{0}/picture?type={1}&access_token={2}", usrRest.id, "large", access_token)
 
-        LBpicture.Text = "<img src=""" & pic & """/>"
-        'LBpicture.Text = "<img src=""https://graph.facebook.com/" & itemzazo.username & "/picture?type=large""/>"
+        LBpicture.Text = "<img src=""https://graph.facebook.com/" & usrRest.id & "/picture?type=large""/>"
         Dim code2 As String = Request("code")
         Dim state2 As String = Request("state")
         'LBpicture.Text = "<img src=""" & usrRest.pic_big_with_logo & """/>"
