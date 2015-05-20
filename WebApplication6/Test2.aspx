@@ -17,7 +17,7 @@
             channelUrl: 'http://hayageek.com/examples/oauth/facebook/oauth-javascript/channel.html', // Channel File
             status: true, // check login status
             cookie: true, // enable cookies to allow the server to access the session
-            xfbml: true  // parse XFBML
+            xfbml: true  // parse XFBMLs
         });
 
     };
