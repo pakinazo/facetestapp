@@ -50,6 +50,8 @@
     </div>
 
             <asp:Label ID="LBDatosPrincipalesFacebook" runat="server"></asp:Label>
+        <br />
+        <a href="Link.aspx">Ir al link</a>
     </form>
 </body>
 </html>

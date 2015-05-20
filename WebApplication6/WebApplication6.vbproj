@@ -228,6 +228,7 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
+    <Content Include="Link.aspx" />
     <Content Include="packages.config" />
     <None Include="My Project\PublishProfiles\n.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -333,6 +334,13 @@
     <Compile Include="Friends.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Link.aspx.designer.vb">
+      <DependentUpon>Link.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Link.aspx.vb">
+      <DependentUpon>Link.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

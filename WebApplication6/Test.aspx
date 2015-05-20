@@ -40,8 +40,7 @@ Login and Facebook cookie remarks:<br /><br />
                 // and signed request each expire
                 var uid = response.authResponse.userID;
                 var accessToken = response.authResponse.accessToken;
-                alert("connected");
-                getUserInfo();
+                //getUserInfo();
                 finish(accessToken);
             } else if (response.status === 'not_authorized') {
                 // the user is logged in to Facebook, s

@@ -12,6 +12,8 @@ Public Class Test2
                 End If
 
                 Iniciar(Session("accessToken"))
+            Else
+                Response.Redirect("Test.aspx")
             End If
 
         End If
