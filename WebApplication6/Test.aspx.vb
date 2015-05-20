@@ -20,8 +20,12 @@ Public Class Test
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
-            If Not Request("accessToken") Is Nothing Then
-                Iniciar(Request("accessToken"))
+            If Not Request("accessToken") Is Nothing Or Not Session("accessToken") Is Nothing Then
+                If Session("accessToken") Is Nothing Then
+                    Session("accessToken") = Request("accessToken")
+                End If
+
+                Iniciar(Session("accessToken"))
             End If
 
         End If
