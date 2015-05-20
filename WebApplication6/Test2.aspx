@@ -16,8 +16,8 @@
             appId: '779337262082870', // Set YOUR APP ID
             channelUrl: 'http://hayageek.com/examples/oauth/facebook/oauth-javascript/channel.html', // Channel File
             status: true, // check login status
-            cookie: true, // enable cookies to allow the server to access the session
-            xfbml: true  // parse XFBMLs
+            cookie: true, 
+            xfbml: false  // parse XFBMLs
         });
 
     };
