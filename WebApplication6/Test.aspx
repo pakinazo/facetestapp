@@ -24,7 +24,7 @@ Login and Facebook cookie remarks:<br /><br />
     window.fbAsyncInit = function () {
         FB.init({
             appId: '779337262082870', // Set YOUR APP ID
-            channelUrl: 'http://hayageek.com/examples/oauth/facebook/oauth-javascript/channel.html', // Channel File
+            channelUrl: 'https://pakinazocanvas.apphb.com/channel.html', // Channel File
             status: true, // check login status
             cookie: true, // enable cookies to allow the server to access the session
             xfbml: false  // parse XFBML
