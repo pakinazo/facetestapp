@@ -26,12 +26,10 @@
 
         FB.login(function (response) {
             if (response.authResponse) {
-                return true;
-            } else {
-                return false;
-                console.log('User cancelled login or did not fully authorize.');
+                 } else {
+                 console.log('User cancelled login or did not fully authorize.');
             }
-        }, { scope: 'user_friends,publish_actions', auth_type: 'rerequest' });
+        }, { scope: 'publish_actions', auth_type: 'rerequest' });
 
     }
 
@@ -50,7 +48,7 @@
 
             <asp:Label ID="LBDatosPrincipalesFacebook" runat="server"></asp:Label>
         <br />
-        <asp:Button ID="BAceptar" runat="server" OnClientClick="return Permitir();" />
+        <asp:Button ID="BAceptar" runat="server" OnClientClick="Permitir();" />
         <a href="Link.aspx">Ir al link</a>
     </form>
 </body>

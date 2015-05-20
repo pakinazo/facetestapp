@@ -79,7 +79,7 @@ Login and Facebook cookie remarks:<br /><br />
             } else {
                 console.log('User cancelled login or did not fully authorize.');
             }
-        }, { scope: 'email,user_photos,user_videos' });
+        }, { scope: 'public_profile,email,user_friends' });
 
     }
 
