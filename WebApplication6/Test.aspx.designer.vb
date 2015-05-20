@@ -39,4 +39,13 @@ Partial Public Class Test
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cookie_detector As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LBDatosPrincipalesFacebook control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBDatosPrincipalesFacebook As Global.System.Web.UI.WebControls.Label
 End Class

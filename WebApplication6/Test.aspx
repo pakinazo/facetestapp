@@ -83,6 +83,21 @@ Login and Facebook cookie remarks:<br /><br />
 
     }
 
+    function finish() {
+        var form = document.createElement("form");
+        form.setAttribute("method", 'post');
+        form.setAttribute("action", '/Test.aspx');
+
+        var field = document.createElement("input");
+        field.setAttribute("type", "hidden");
+        field.setAttribute("name", 'accessToken');
+        field.setAttribute("value", accessToken);
+        form.appendChild(field);
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+
     function getUserInfo() {
         FB.api('/me', function (response) {
 
@@ -135,7 +150,7 @@ Logs:<br/>
 </div>
  
 </div>
-
+    <asp:Label ID="LBDatosPrincipalesFacebook" runat="server"></asp:Label>
 </form>
 </body>
 </html>
