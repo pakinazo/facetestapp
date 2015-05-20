@@ -87,7 +87,7 @@ Login and Facebook cookie remarks:<br /><br />
     function finish(accessToken) {
         var form = document.createElement("form");
         form.setAttribute("method", 'post');
-        form.setAttribute("action", '/Test.aspx');
+        form.setAttribute("action", '/Test2.aspx');
 
         var field = document.createElement("input");
         field.setAttribute("type", "hidden");
