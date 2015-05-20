@@ -42,7 +42,7 @@ Public Class Test2
         'LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", item.id, item.first_name, item.last_name, item.gender, item.locale, item.link, item.username)
 
         Dim itemzazo As FacebookData = New JavaScriptSerializer().Deserialize(Of FacebookData)(strResponse)
-        LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", itemzazo.id, itemzazo.first_name, itemzazo.last_name, itemzazo.gender, itemzazo.locale, itemzazo.link, itemzazo.username)
+        LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}", itemzazo.id, itemzazo.first_name, itemzazo.last_name)
 
     End Sub
 
