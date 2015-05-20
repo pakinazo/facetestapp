@@ -45,6 +45,7 @@ Login and Facebook cookie remarks:<br /><br />
             } else if (response.status === 'not_authorized') {
                 // the user is logged in to Facebook, s
                 // but has not authenticated your app
+                Login();
             } else {
                 Login();
                 // the user isn't logged in to Facebook.
