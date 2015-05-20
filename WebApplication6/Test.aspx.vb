@@ -56,8 +56,8 @@ Public Class Test
             'During loading of the page, the code below will be executed
             'Define the Facebook application ID and the Facebook Secret Key
 
-            Dim facebook_application_id = "REPLACE WITH YOUR APPLICATION ID"
-            Dim facebook_secret_key = "REPLACE WITH FACEBOOK SECRET KEY"
+        Dim facebook_application_id = "779337262082870"
+        Dim facebook_secret_key = "0e4c136ef9121b45a272c8d43e77509b"
 
             'Retrieve Facebook cookie for a given application ID
 
