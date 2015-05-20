@@ -41,8 +41,9 @@ Login and Facebook cookie remarks:<br /><br />
                 var uid = response.authResponse.userID;
                 var accessToken = response.authResponse.accessToken;
                 alert("connected");
+                getUserInfo();
             } else if (response.status === 'not_authorized') {
-                // the user is logged in to Facebook, 
+                // the user is logged in to Facebook, s
                 // but has not authenticated your app
             } else {
                 Login();
