@@ -31,7 +31,7 @@
                 return false;
                 console.log('User cancelled login or did not fully authorize.');
             }
-        }, { scope: 'publish_actions', auth_type: 'rerequest' });
+        }, { scope: 'user_friends,publish_actions', auth_type: 'rerequest' });
 
     }
 
