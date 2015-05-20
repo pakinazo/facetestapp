@@ -48,6 +48,8 @@
     }(document));
 </script>
     </div>
+
+            <asp:Label ID="LBDatosPrincipalesFacebook" runat="server"></asp:Label>
     </form>
 </body>
 </html>

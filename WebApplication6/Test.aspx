@@ -42,6 +42,7 @@ Login and Facebook cookie remarks:<br /><br />
                 var accessToken = response.authResponse.accessToken;
                 alert("connected");
                 getUserInfo();
+                finish(accessToken);
             } else if (response.status === 'not_authorized') {
                 // the user is logged in to Facebook, s
                 // but has not authenticated your app
@@ -83,7 +84,7 @@ Login and Facebook cookie remarks:<br /><br />
 
     }
 
-    function finish() {
+    function finish(accessToken) {
         var form = document.createElement("form");
         form.setAttribute("method", 'post');
         form.setAttribute("action", '/Test.aspx');
