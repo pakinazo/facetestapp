@@ -30,4 +30,13 @@ Partial Public Class Test2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LBDatosPrincipalesFacebook As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''BAceptar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BAceptar As Global.System.Web.UI.WebControls.Button
 End Class

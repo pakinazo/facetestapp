@@ -79,7 +79,7 @@ Login and Facebook cookie remarks:<br /><br />
             } else {
                 console.log('User cancelled login or did not fully authorize.');
             }
-        }, { scope: 'email,user_photos,user_videos,publish_actions' });
+        }, { scope: 'email,user_photos,user_videos' });
 
     }
 
@@ -130,7 +130,7 @@ Login and Facebook cookie remarks:<br /><br />
         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
         if (d.getElementById(id)) { return; }
         js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "//connect.facebook.net/en_US/all.js";
+        js.src = "//connect.facebook.net/es_LA/all.js";
         ref.parentNode.insertBefore(js, ref);
     }(document));
 

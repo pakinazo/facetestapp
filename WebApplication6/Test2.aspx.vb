@@ -45,4 +45,8 @@ Public Class Test2
         LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}, gender {3}, locale {4}, link {5}, username {6} ", itemzazo.id, itemzazo.first_name, itemzazo.last_name, itemzazo.gender, itemzazo.locale, itemzazo.link, itemzazo.username)
 
     End Sub
+
+    Protected Sub BAceptar_Click(sender As Object, e As EventArgs) Handles BAceptar.Click
+        LBDatosPrincipalesFacebook.Text &= " *** Permitido ***"
+    End Sub
 End Class
