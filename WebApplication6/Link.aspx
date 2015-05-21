@@ -10,6 +10,8 @@
     <form id="form1" runat="server">
     <div>
     <a href="Test2.aspx" >Volver al inicio</a>
+        <asp:Label ID="LQUERY" runat="server"></asp:Label>
+
     </div>
     </form>
 </body>

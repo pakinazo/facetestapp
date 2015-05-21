@@ -80,10 +80,10 @@ Public Class Test2
             args("access_token") = result.access_token
             args("href") = ""
             args("template") = txtNotificación
-            Dim kk As Object = fbclient.Post(msg, args)
+            Dim req As Object = fbclient.Post(msg, args)
 
             Try
-                LBDatosPrincipalesFacebook.Text &= "respuesta: " & kk.success
+                LBDatosPrincipalesFacebook.Text &= "respuesta: " & req.success
             Catch ex As Exception
                 LBDatosPrincipalesFacebook.Text &= ",e1: " & ex.Message.ToString
             End Try
