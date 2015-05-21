@@ -25,7 +25,7 @@ Login and Facebook cookie remarks:<br /><br />
         FB.init({
             appId: '779337262082870', // Set YOUR APP ID
             status: true, // check login status
-            version    : 'v2.3',
+            version: 'v2.3',
             xfbml: false  // parse XFBML
         });
 
