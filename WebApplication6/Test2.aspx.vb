@@ -78,7 +78,7 @@ Public Class Test2
 
             Dim args As New Dictionary(Of String, Object)
             args("access_token") = result.access_token
-            args("href") = UrlNotificar
+            args("href") = ""
             args("template") = txtNotificación
             Dim kk As Object = fbclient.Post(msg, args)
 
