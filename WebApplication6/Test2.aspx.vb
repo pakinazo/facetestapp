@@ -64,8 +64,6 @@ Public Class Test2
 
             Dim fbclient As New Facebook.FacebookClient(result.access_token)
 
-            Dim act As New Dictionary(Of String, Object)
-
             'Enviar Notificacion ejemplo:
             'POST /{recipient_userid}/notifications?
             'access_token= … & 
@@ -76,8 +74,14 @@ Public Class Test2
             Dim idNotificar As String = "100002078392441"
     
 
-            Dim msg As String = String.Format("{0}/notifications?access_token={1}&href={2}&template={3}", idNotificar, result.access_token, UrlNotificar, txtNotificación)
-            Dim kk As Object = fbclient.Post(msg)
+            Dim msg As String = String.Format("/{0}/notifications", idNotificar)
+
+            Dim args As New Dictionary(Of String, Object)
+            args("access_token") = idNotificar
+            args("href") = result.access_token
+            args("template") = UrlNotificar
+            Dim kk As Object = fbclient.Post(msg, args)
+
             Try
                 LBDatosPrincipalesFacebook.Text &= "respuesta: " & kk.success
             Catch ex As Exception
