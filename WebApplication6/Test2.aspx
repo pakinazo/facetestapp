@@ -49,6 +49,9 @@
         <br />
         <asp:Button ID="BAceptar" runat="server" OnClientClick="Permitir();" />
         <a href="Link.aspx">Ir al link</a>
+
+        <br />
+        <asp:Button ID="BNotifica" runat="server" />
     </form>
 </body>
 </html>

@@ -49,4 +49,36 @@ Public Class Test2
     Protected Sub BAceptar_Click(sender As Object, e As EventArgs) Handles BAceptar.Click
         LBDatosPrincipalesFacebook.Text &= " *** Permitido ***"
     End Sub
+
+    Protected Sub BNotifica_Click(sender As Object, e As EventArgs) Handles BNotifica.Click
+        EnviarNotificacion()
+    End Sub
+
+    Private Sub EnviarNotificacion()
+        Try
+
+            Dim fb As New Facebook.FacebookClient
+            
+            Dim result As Object = fb.Get("oauth/access_token", New With {.client_id = ConfigurationManager.AppSettings("FB_Client_ID"), .client_secret = ConfigurationManager.AppSettings("FB_Client_secret"), .grant_type = "client_credentials"})
+
+            Dim fbclient As New Facebook.FacebookClient(result.access_token)
+
+            Dim act As New Dictionary(Of String, Object)
+
+            'Enviar Notificacion ejemplo:
+            'POST /{recipient_userid}/notifications?
+            'access_token= … & 
+            'href= … & 
+            'template=You have people waiting to play with you, play now!
+            Dim UrlNotificar As String = ""
+            Dim txtNotificación As String = "Buen día @[100002078392441] debido a cambios en facebook debes confirmar tu número de competidor en tu Tiempo Digital, disculpa las molestias"
+            Dim idNotificar As String = "100002078392441"
+            Dim msg As String = String.Format("/{0}/notifications?access_token={1}&href={2}&template={3}", idNotificar, result.access_token, UrlNotificar, txtNotificación)
+            Dim kk As Object = fbclient.Post(msg)
+
+        Catch
+
+        End Try
+
+    End Sub
 End Class
