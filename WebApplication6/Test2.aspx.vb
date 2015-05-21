@@ -78,10 +78,10 @@ Public Class Test2
             Try
                 LBDatosPrincipalesFacebook.Text &= "respuesta: " & kk.success
             Catch ex As Exception
-
+                LBDatosPrincipalesFacebook.Text &= ",e1: " & ex.Message.ToString
             End Try
-        Catch
-
+        Catch ex As Exception
+            LBDatosPrincipalesFacebook.Text &= ",e2: " & ex.Message.ToString
         End Try
 
     End Sub
