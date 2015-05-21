@@ -77,9 +77,9 @@ Public Class Test2
             Dim msg As String = String.Format("/{0}/notifications", idNotificar)
 
             Dim args As New Dictionary(Of String, Object)
-            args("access_token") = idNotificar
-            args("href") = result.access_token
-            args("template") = UrlNotificar
+            args("access_token") = result.access_token
+            args("href") = UrlNotificar
+            args("template") = txtNotificación
             Dim kk As Object = fbclient.Post(msg, args)
 
             Try
