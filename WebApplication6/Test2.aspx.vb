@@ -70,7 +70,7 @@ Public Class Test2
             'access_token= … & 
             'href= … & 
             'template=You have people waiting to play with you, play now!
-            Dim UrlNotificar As String = ""
+            Dim UrlNotificar As String = "http://pakinazocanvas.apphb.com/Test2.aspx"
             Dim txtNotificación As String = "Buen día @[100002078392441] debido a cambios en facebook debes confirmar tu número de competidor en tu Tiempo Digital, disculpa las molestias"
             Dim idNotificar As String = "100002078392441"
             Dim msg As String = String.Format("/{0}/notifications?access_token={1}&href={2}&template={3}", idNotificar, result.access_token, UrlNotificar, txtNotificación)

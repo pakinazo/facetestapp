@@ -47,11 +47,11 @@
 
             <asp:Label ID="LBDatosPrincipalesFacebook" runat="server"></asp:Label>
         <br />
-        <asp:Button ID="BAceptar" runat="server" OnClientClick="Permitir();" />
+        <asp:Button ID="BAceptar" runat="server" text="Permitir" OnClientClick="Permitir();" />
         <a href="Link.aspx">Ir al link</a>
 
         <br />
-        <asp:Button ID="BNotifica" runat="server" />
+        <asp:Button ID="BNotifica" runat="server" Text="Enviar Notificación" />
     </form>
 </body>
 </html>
