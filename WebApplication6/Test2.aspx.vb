@@ -75,7 +75,11 @@ Public Class Test2
             Dim idNotificar As String = "100002078392441"
             Dim msg As String = String.Format("/{0}/notifications?access_token={1}&href={2}&template={3}", idNotificar, result.access_token, UrlNotificar, txtNotificación)
             Dim kk As Object = fbclient.Post(msg)
+            Try
+                LBDatosPrincipalesFacebook.Text &= "respuesta: " & kk.success
+            Catch ex As Exception
 
+            End Try
         Catch
 
         End Try
