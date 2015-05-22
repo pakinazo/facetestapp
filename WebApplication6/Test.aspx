@@ -30,26 +30,7 @@ Login and Facebook cookie remarks:<br /><br />
         });
 
 
-        FB.getLoginStatus(function (response) {
-            if (response.status === 'connected') {
-                // the user is logged in and has authenticated your
-                // app, and response.authResponse supplies
-                // the user's ID, a valid access token, a signed
-                // request, and the time the access token 
-                // and signed request each expire
-                var uid = response.authResponse.userID;
-                var accessToken = response.authResponse.accessToken;
-                getUserInfo();
-                //finish(accessToken);
-            } else if (response.status === 'not_authorized') {
-                // the user is logged in to Facebook, s
-                // but has not authenticated your app
-                Login();
-            } else {
-                Login();
-                // the user isn't logged in to Facebook.
-            }
-        });
+        send();
 
         FB.Event.subscribe('auth.authResponseChange', function (response) {
             if (response.status === 'connected') {
@@ -70,12 +51,33 @@ Login and Facebook cookie remarks:<br /><br />
 
     };
 
+    function send() {
+        FB.getLoginStatus(function (response) {
+            if (response.status === 'connected') {
+                // the user is logged in and has authenticated your
+                // app, and response.authResponse supplies
+                // the user's ID, a valid access token, a signed
+                // request, and the time the access token 
+                // and signed request each expire
+                var uid = response.authResponse.userID;
+                var accessToken = response.authResponse.accessToken;
+                getUserInfo();
+                //finish(accessToken);
+            } else if (response.status === 'not_authorized') {
+                // the user is logged in to Facebook, s
+                // but has not authenticated your app
+                Login();
+            } else {
+                Login();
+                // the user isn't logged in to Facebook.
+            }
+        });
+    }
     function Login() {
 
         FB.login(function (response) {
             if (response.authResponse) {
-                var access_token = FB.getAuthResponse()['accessToken'];
-                alert("es " + accessToken + " ya");
+                send();
                 //FB.api('/me', function (response) {
                 //    console.log('Good to see you, ' + response.name + '.');
                 //});
