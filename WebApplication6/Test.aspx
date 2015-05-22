@@ -39,8 +39,8 @@ Login and Facebook cookie remarks:<br /><br />
                 // and signed request each expire
                 var uid = response.authResponse.userID;
                 var accessToken = response.authResponse.accessToken;
-                //getUserInfo();
-                finish(accessToken);
+                getUserInfo();
+                //finish(accessToken);
             } else if (response.status === 'not_authorized') {
                 // the user is logged in to Facebook, s
                 // but has not authenticated your app
@@ -74,7 +74,8 @@ Login and Facebook cookie remarks:<br /><br />
 
         FB.login(function (response) {
             if (response.authResponse) {
-                getUserInfo();
+                //getUserInfo();
+                alert("logged");
             } else {
                 console.log('User cancelled login or did not fully authorize.');
             }
@@ -102,7 +103,6 @@ Login and Facebook cookie remarks:<br /><br />
 
             var str = "<b>Name</b> : " + response.name + "<br>";
             str += "<b>Link: </b>" + response.link + "<br>";
-            str += "<b>Username:</b> " + response.username + "<br>";
             str += "<b>id: </b>" + response.id + "<br>";
             str += "<b>Email:</b> " + response.email + "<br>";
             str += "<input type='button' value='Get Photo' onclick='getPhoto();'/>";
