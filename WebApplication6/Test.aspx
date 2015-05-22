@@ -75,7 +75,7 @@ Login and Facebook cookie remarks:<br /><br />
         FB.login(function (response) {
             if (response.authResponse) {
                 var access_token = FB.getAuthResponse()['accessToken'];
-                alert(accessToken);
+                alert("es " + accessToken + " ya");
                 //FB.api('/me', function (response) {
                 //    console.log('Good to see you, ' + response.name + '.');
                 //});
