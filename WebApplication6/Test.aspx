@@ -74,9 +74,7 @@ Login and Facebook cookie remarks:<br /><br />
 
         FB.login(function (response) {
             if (response.authResponse) {
-                //getUserInfo();
-                accessToken = response.authResponse.accessToken;
-                finish(accessToken);
+                location.reload();
             } else {
                 console.log('User cancelled login or did not fully authorize.');
             }
