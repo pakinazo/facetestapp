@@ -28,7 +28,7 @@ Public Class Test2
 
         Dim sURL As String
         sURL = String.Format("https://graph.facebook.com/?id={0}", usrRest.id)
-
+        Session("FBID") = usrRest.id
         Dim wrGETURL As WebRequest
         wrGETURL = WebRequest.Create(sURL)
         Dim objStream As Stream
@@ -49,6 +49,7 @@ Public Class Test2
 
     Protected Sub BAceptar_Click(sender As Object, e As EventArgs) Handles BAceptar.Click
         LBDatosPrincipalesFacebook.Text &= " *** Permitido ***"
+        sendFacebook(Session("FBID"), "", "", "http://www.oem.com.mx/diariodexalapa/", "", "Logré hacer el tiempo estimado", "http://i.oem.com.mx/8bbb5bac-d209-4ed7-920e-93e928dad5bf.jpg")
     End Sub
 
     Protected Sub BNotifica_Click(sender As Object, e As EventArgs) Handles BNotifica.Click
@@ -92,4 +93,35 @@ Public Class Test2
         End Try
 
     End Sub
+
+
+    Public Function sendFacebook(ByVal Usuario As String, ByVal Accion As String, ByVal Carrera As String, ByVal CarreraURL As String, ByVal Categoria As String, ByVal Mensaje As String, ByVal urlImagen As String) As Boolean
+        Dim fb As New Facebook.FacebookClient
+
+        Dim _app_id As String = System.Configuration.ConfigurationManager.AppSettings.Item("FB_Client_ID")
+        Dim _secret As String = System.Configuration.ConfigurationManager.AppSettings.Item("FB_Client_secret")
+
+        Dim result As Object = fb.Get("oauth/access_token", New With {.client_id = _app_id, .client_secret = _secret, .grant_type = "client_credentials"})
+
+        Dim fbclient As New Facebook.FacebookClient(result.access_token)
+
+        Dim vars As New Dictionary(Of String, Object)
+
+        vars("message") = Accion
+        vars("name") = Carrera
+        vars("caption") = Categoria
+        vars("description") = Mensaje
+        vars("picture") = urlImagen
+        vars("link") = CarreraURL
+        vars("actions") = New With {.name = "A Tiempo", .link = "https://apps.facebook.com/"}
+
+        Try
+            Dim msg As String = String.Format("/{0}/feed", Usuario)
+            Dim kk As Object = fbclient.Post(msg, vars)
+            Return True
+        Catch EX As Exception
+            LBDatosPrincipalesFacebook.Text = "EX: " & EX.Message.ToString
+            Return False
+        End Try
+    End Function
 End Class
