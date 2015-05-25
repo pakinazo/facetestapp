@@ -49,7 +49,7 @@ Public Class Test2
 
     Protected Sub BAceptar_Click(sender As Object, e As EventArgs) Handles BAceptar.Click
         LBDatosPrincipalesFacebook.Text &= " *** Permitido ***"
-        sendFacebook(Session("FBID"), "", "", "http://www.oem.com.mx/diariodexalapa/", "", "Logré hacer el tiempo estimado", "http://i.oem.com.mx/8bbb5bac-d209-4ed7-920e-93e928dad5bf.jpg")
+        sendFacebook(Session("FBID"), "", "", "https://apps.facebook.com/primercanvazazo", "", "Logré hacer el tiempo estimado con el número 11", "http://registro.tiempooficial.com/images/eventos/mmclubhuilango2015.jpg")
     End Sub
 
     Protected Sub BNotifica_Click(sender As Object, e As EventArgs) Handles BNotifica.Click
@@ -113,7 +113,7 @@ Public Class Test2
         vars("description") = Mensaje
         vars("picture") = urlImagen
         vars("link") = CarreraURL
-        vars("actions") = New With {.name = "A Tiempo", .link = "https://apps.facebook.com/"}
+        vars("actions") = New With {.name = "A Tiempo", .link = "https://apps.facebook.com/primercanvazazo"}
 
         Try
             Dim msg As String = String.Format("/{0}/feed", Usuario)
