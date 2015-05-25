@@ -49,7 +49,25 @@ Public Class Test2
 
     Protected Sub BAceptar_Click(sender As Object, e As EventArgs) Handles BAceptar.Click
         LBDatosPrincipalesFacebook.Text &= " *** Permitido ***"
-        sendFacebook(Session("FBID"), "", "", "https://apps.facebook.com/primercanvazazo", "", "Logré hacer el tiempo estimado con el número 11", "http://registro.tiempooficial.com/images/eventos/mmclubhuilango2015.jpg")
+        Dim xlogo As String = String.Empty
+        Dim tempLogo As String = "images/mmclubhuilango2015.jpg"
+        Dim XARRIMG As String() = tempLogo.Split("/")
+
+        Select Case XARRIMG.Count
+            Case 0
+                xlogo = tempLogo
+            Case 2
+                xlogo = tempLogo.Split("/")(2)
+            Case Is > 2
+                xlogo = String.Empty
+                For i = 2 To (XARRIMG.Count - 1) Step 1
+                    xlogo = xlogo & "/" & XARRIMG(i)
+                Next i
+        End Select
+        Dim xrutaImagen As String = System.Configuration.ConfigurationManager.AppSettings.Item("RutaImagenes")
+        Dim _logoFinal As String = xrutaImagen & xlogo
+
+        sendFacebook(Session("FBID"), "", "", "https://apps.facebook.com/primercanvazazo", "", "Logré realizar el tiempo estimado en el evento: Maratón de la Ciudad de México, con el número 11", "http://registro.tiempooficial.com/images/eventos/mmclubhuilango2015.jpg")
     End Sub
 
     Protected Sub BNotifica_Click(sender As Object, e As EventArgs) Handles BNotifica.Click
