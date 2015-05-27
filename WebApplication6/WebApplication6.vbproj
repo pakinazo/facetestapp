@@ -219,6 +219,7 @@
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\mapa.png" />
     <Content Include="Images\orderedList0.png" />
     <Content Include="Images\orderedList1.png" />
     <Content Include="Images\orderedList2.png" />
@@ -230,6 +231,7 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Link.aspx" />
+    <Content Include="OGFacebook.aspx" />
     <Content Include="packages.config" />
     <None Include="My Project\PublishProfiles\n.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -361,6 +363,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="OGFacebook.aspx.designer.vb">
+      <DependentUpon>OGFacebook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OGFacebook.aspx.vb">
+      <DependentUpon>OGFacebook.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ResponseHelper.vb" />
     <Compile Include="Share.aspx.designer.vb">
