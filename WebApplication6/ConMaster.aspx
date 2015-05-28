@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="ConMaster.aspx.vb" Inherits="WebApplication6.ConMaster" %>
 
-
+<asp:Content runat="server" ID="FaceContent" ContentPlaceHolderID="HeadContent">
+    <asp:literal runat="server" ID="LFacebookInfo"></asp:literal>
+</asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
         <h1><%: Title %>.</h1>

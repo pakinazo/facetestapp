@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class ConMaster
 
     '''<summary>
+    '''LFacebookInfo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LFacebookInfo As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
     '''amigos control.
     '''</summary>
     '''<remarks>

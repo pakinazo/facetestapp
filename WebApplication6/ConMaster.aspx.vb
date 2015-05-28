@@ -16,10 +16,11 @@
             Dim urlTag As String = String.Format("<meta property=""og:url"" content=""{0}""/>", newUri)
             Dim typeTag As String = "<meta property=""og:type"" content=""article"" />"
             Dim app_idTag As String = String.Format("<meta property=""fb:app_id"" content=""{0}""/>", ConfigurationManager.AppSettings("FB_Client_ID"))
-            Dim titleTag As String = "<meta property=""og:title"" content=""PERIDOCAZAZO"" />"
+            Dim titleTag As String = "<meta property=""og:title"" content=""PERIDOCAZAZO 2"" />"
 
             Dim facebookTags = imageTag & descriptionTag & urlTag & typeTag & app_idTag & titleTag
-            DirectCast(Me.Page.Master.FindControl("OGFacebookMetaTags"), Literal).Text = facebookTags
+            LFacebookInfo.Text = facebookTags
+            'DirectCast(Me.Page.Master.FindControl("OGFacebookMetaTags"), Literal).Text = 
         Catch ex As Exception
 
         End Try
