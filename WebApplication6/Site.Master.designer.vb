@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class SiteMaster
 
     '''<summary>
+    '''OGFacebookMetaTags control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents OGFacebookMetaTags As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
     '''HeadContent control.
     '''</summary>
     '''<remarks>
