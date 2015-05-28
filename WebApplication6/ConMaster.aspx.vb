@@ -23,7 +23,7 @@
             End If
 
 
-            Dim imageTag As String = "<meta property=""og:image"" content=""http://pakinazocanvas.apphb.com/Images/mapa.png""/>"
+            Dim imageTag As String = "<meta property=""og:image"" content=""http://pakinazocanvas.apphb.com/Images/sideFondo.png""/>"
             Dim descriptionTag As String = String.Format("<meta property=""og:description"" content=""Comparación Side By Side durante la competencia:{0}""/>", q)
             Dim urlTag As String = String.Format("<meta property=""og:url"" content=""{0}""/>", newUri)
             Dim typeTag As String = "<meta property=""og:type"" content=""article"" />"
