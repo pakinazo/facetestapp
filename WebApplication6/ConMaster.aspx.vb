@@ -9,7 +9,7 @@
         Try
             Dim imageTag As String = "<meta property=""og:image"" content=""http://pakinazocanvas.apphb.com/Images/mapa.png""/>"
             Dim descriptionTag As String = "<meta property=""og:description"" content=""Comparación Side By Side durante la competencia""/>"
-            Dim urlTag As String = String.Format("<meta property=""og:url"" content=""{0}""/>", Request.Url.AbsoluteUri)
+            Dim urlTag As String = String.Format("<meta property=""og:url"" content=""{0}""/>", Request.Url.ToString)
             Dim typeTag As String = "<meta property=""og:type"" content=""article"" />"
             Dim app_idTag As String = "" ' String.Format("<meta property=""fb:app_id"" content=""{0}""/>", ConfigurationManager.AppSettings("FB_Client_ID"))
 
