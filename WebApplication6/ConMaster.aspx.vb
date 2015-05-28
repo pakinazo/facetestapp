@@ -10,9 +10,21 @@
             Dim builder As UriBuilder = New UriBuilder(Request.Url.AbsoluteUri)
             builder.Port = -1
             Dim newUri As Uri = builder.Uri
+            Dim q As String = "nada"
+            If Request.QueryString("idRes") = 1 Then
+                q = "uno"
+            ElseIf Request.QueryString("idRes") = 2 Then
+                q = "dos"
+            ElseIf Request.QueryString("idRes") = 3 Then
+                q = "tres"
+            ElseIf Request.QueryString("idRes") = 4 Then
+                q = "cuatro"
+
+            End If
+
 
             Dim imageTag As String = "<meta property=""og:image"" content=""http://pakinazocanvas.apphb.com/Images/mapa.png""/>"
-            Dim descriptionTag As String = "<meta property=""og:description"" content=""Comparación Side By Side durante la competencia""/>"
+            Dim descriptionTag As String = String.Format("<meta property=""og:description"" content=""Comparación Side By Side durante la competencia:{0}""/>", q)
             Dim urlTag As String = String.Format("<meta property=""og:url"" content=""{0}""/>", newUri)
             Dim typeTag As String = "<meta property=""og:type"" content=""article"" />"
             Dim app_idTag As String = String.Format("<meta property=""fb:app_id"" content=""{0}""/>", ConfigurationManager.AppSettings("FB_Client_ID"))
