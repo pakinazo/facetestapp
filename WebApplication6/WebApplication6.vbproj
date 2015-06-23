@@ -217,6 +217,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Images\1200.png" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
@@ -233,6 +234,7 @@
     <Content Include="Images\orderedList9.png" />
     <Content Include="Images\sidebyside_fyf.png" />
     <Content Include="Images\sideFondo.png" />
+    <Content Include="imggrande.aspx" />
     <Content Include="Link.aspx" />
     <Content Include="OGFacebook.aspx" />
     <Content Include="packages.config" />
@@ -347,6 +349,13 @@
     <Compile Include="Friends.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="imggrande.aspx.designer.vb">
+      <DependentUpon>imggrande.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="imggrande.aspx.vb">
+      <DependentUpon>imggrande.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Link.aspx.designer.vb">
       <DependentUpon>Link.aspx</DependentUpon>
