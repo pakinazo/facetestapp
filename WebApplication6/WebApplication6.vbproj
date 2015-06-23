@@ -219,6 +219,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Images\1200.png" />
     <Content Include="Images\accent.png" />
+    <Content Include="Images\banner-video6001.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
     <Content Include="Images\mapa.png" />

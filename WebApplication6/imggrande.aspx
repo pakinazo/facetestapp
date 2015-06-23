@@ -10,7 +10,7 @@
         <meta property="og:type" content="article" />
         <meta property="og:title" content="Análisis de imagen" />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image" content="http://pakinazocanvas.apphb.com/Images/1200.png" />
+        <meta property="og:image" content="http://pakinazocanvas.apphb.com/Images/banner-video6001.png" />
         <meta property="og:description" content="MyFavNews is the best source for your favorite news." />
 </head>
 <body>
