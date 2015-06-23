@@ -219,6 +219,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Images\1200.png" />
     <Content Include="Images\accent.png" />
+    <Content Include="Images\banner-estadistica1200.png" />
     <Content Include="Images\banner-video200.png" />
     <Content Include="Images\banner-video400.png" />
     <Content Include="Images\banner-video550.png" />
@@ -242,6 +243,7 @@
     <Content Include="Link.aspx" />
     <Content Include="OGFacebook.aspx" />
     <Content Include="packages.config" />
+    <Content Include="WebForm1.aspx" />
     <None Include="My Project\PublishProfiles\n.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -421,6 +423,13 @@
     </Compile>
     <Compile Include="Test2.aspx.vb">
       <DependentUpon>Test2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

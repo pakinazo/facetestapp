@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="imggrande.aspx.vb" Inherits="WebApplication6.imggrande" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WebForm1.aspx.vb" Inherits="WebApplication6.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
         <meta property="og:type" content="article" />
         <meta property="og:title" content="Análisis de imagen" />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image" content="http://pakinazocanvas.apphb.com/Images/banner-video1200.png" />
+        <meta property="og:image" content="http://pakinazocanvas.apphb.com/Images/banner-estadistica1200.png" />
         <meta property="og:description" content="MyFavNews is the best source for your favorite news." />
 </head>
 <body>
