@@ -220,6 +220,7 @@
     <Content Include="Images\1200.png" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\banner-estadistica1200.png" />
+    <Content Include="Images\banner-estadistica200.png" />
     <Content Include="Images\banner-video1200.png" />
     <Content Include="Images\banner-video200.png" />
     <Content Include="Images\banner-video400.png" />
