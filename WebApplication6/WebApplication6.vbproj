@@ -248,6 +248,7 @@
     <Content Include="Link.aspx" />
     <Content Include="OGFacebook.aspx" />
     <Content Include="packages.config" />
+    <Content Include="TabPage.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="My Project\PublishProfiles\n.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -415,6 +416,13 @@
     <Compile Include="Site.Master.vb">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TabPage.aspx.designer.vb">
+      <DependentUpon>TabPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TabPage.aspx.vb">
+      <DependentUpon>TabPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Test.aspx.designer.vb">
       <DependentUpon>Test.aspx</DependentUpon>
