@@ -99,7 +99,9 @@ Número UNO" />
     
     <script>
         var offsetHeight = document.getElementById('alto').offsetHeight;
+        alert("alto" + alto);
         FB.Canvas.setSize({ height: offsetHeight });
+        <lert("fbfin");
     </script>
 </body>
 </html>

@@ -247,8 +247,10 @@
     <Content Include="imggrande.aspx" />
     <Content Include="Link.aspx" />
     <Content Include="OGFacebook.aspx" />
+    <Content Include="OtroAlto.aspx" />
     <Content Include="packages.config" />
     <Content Include="TabPage.aspx" />
+    <Content Include="Testingancho.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="My Project\PublishProfiles\n.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -402,6 +404,13 @@
       <DependentUpon>OGFacebook.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="OtroAlto.aspx.designer.vb">
+      <DependentUpon>OtroAlto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtroAlto.aspx.vb">
+      <DependentUpon>OtroAlto.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="ResponseHelper.vb" />
     <Compile Include="Share.aspx.designer.vb">
       <DependentUpon>Share.aspx</DependentUpon>
@@ -436,6 +445,13 @@
     </Compile>
     <Compile Include="Test2.aspx.vb">
       <DependentUpon>Test2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Testingancho.aspx.designer.vb">
+      <DependentUpon>Testingancho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Testingancho.aspx.vb">
+      <DependentUpon>Testingancho.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="WebForm1.aspx.designer.vb">
