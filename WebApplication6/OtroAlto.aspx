@@ -246,6 +246,7 @@
     </div>
     </form>
      </div>
+      <script src="https://connect.facebook.net/es_MX/all.js"></script>
     <script>
         FB.init({
             appId: '779337262082870',
@@ -253,6 +254,11 @@
             status: true,
             xfbml: true
         });
+
+        var offsetHeight = document.getElementById('alto').offsetHeight;
+        alert("alto" + offsetHeight);
+        FB.Canvas.setSize({ height: offsetHeight });
+        alert("fbfin");
 
         var offsetHeight = document.getElementById('alto').offsetHeight;
         alert("1");
