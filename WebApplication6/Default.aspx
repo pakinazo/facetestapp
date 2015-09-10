@@ -286,7 +286,7 @@ Facebook Invite Friends Link
         xfbml: true
     });
 
-    FB.Canvas.setSize();
+    FB.Canvas.setSize({ height: 4000 });
 
     //function echoSize() {
     //    document.getElementById('output').innerHTML =
