@@ -14,7 +14,7 @@
     <div>
     adsadads
         <a href="Testingancho.aspx">testing ancho</a>
-        <a href="Testingancho.aspx">Default</a>
+        <a href="Default.aspx">Default</a>
          <table>
         <tr>
             <td>

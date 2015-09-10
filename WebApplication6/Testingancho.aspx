@@ -13,7 +13,8 @@
     <form id="form1" runat="server">
     <div>
     adsadads
-        <a href="OtroAlto.aspx"></a>
+                <a href="OtroAlto.aspx">Otro alto</a>
+        <a href="Default.aspx">Default</a>
     </div>
     </form>
      </div>
