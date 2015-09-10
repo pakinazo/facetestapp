@@ -41,7 +41,72 @@
 Facebook Invite Friends Link
 </a>
 
+      <div id="allContent" style="background-color: #0000FF; height:100%">
+        <div id="output" style="color: #FFFFFF;" />
+     </div>
+
+
     <table>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
         <tr>
             <td>
                 Algo
@@ -221,11 +286,23 @@ Facebook Invite Friends Link
         xfbml: true
     });
 
-    function FacebookInviteFriends() {
-        FB.ui({
-            method: 'apprequests',
-            message: 'Prueba la nueva App!'
-        });
-    }
+    FB.Canvas.setSize();
+
+    //function echoSize() {
+    //    document.getElementById('output').innerHTML =
+    //       "HTML Content Width: " + window.innerWidth +
+    //       " Height: " + window.innerHeight;
+    //    console.log(window.innerWidth + ' x ' + window.innerHeight);
+    //}
+
+    //echoSize();
+    //window.onresize = echoSize;
+
+    //function FacebookInviteFriends() {
+    //    FB.ui({
+    //        method: 'apprequests',
+    //        message: 'Prueba la nueva App!'
+    //    });
+    //}
 </script>
 </asp:Content>
