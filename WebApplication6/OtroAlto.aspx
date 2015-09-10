@@ -254,16 +254,8 @@
             status: true,
             xfbml: true
         });
-
         var offsetHeight = document.getElementById('alto').offsetHeight;
-        alert("alto" + offsetHeight);
-        FB.Canvas.setSize({ height: offsetHeight });
-        alert("fbfin");
-
-        var offsetHeight = document.getElementById('alto').offsetHeight;
-        alert("1");
-        FB.Canvas.setSize({ height: offsetHeight });
-        alert("2");
+        FB.Canvas.setSize({ height: offsetHeight + 40});
     </script>
 </body>
 </html>
