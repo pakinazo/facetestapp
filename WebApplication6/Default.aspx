@@ -9,6 +9,10 @@
             </hgroup>
             <p>
               Aquí podrás consultar nuevas noticias!!! </p>
+            <p>
+                <a href="OtroAlto.aspx">otro alto</a>
+                <a href="Testingancho.aspx">testing ancho</a>
+            </p>
         </div>
     </section>
 </asp:Content>
