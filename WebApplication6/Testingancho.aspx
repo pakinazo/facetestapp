@@ -22,6 +22,17 @@
     </div>
     </form>
      </div>
+    <script src="https://connect.facebook.net/es_MX/all.js"></script>
+
+
+    <script>
+    FB.init({
+        appId: '779337262082870',
+        cookie: true,
+        status: true,
+        xfbml: true
+    });
+    </script>
     <script>
         var offsetHeight = document.getElementById('alto').offsetHeight;
         FB.Canvas.setSize({ height: offsetHeight +40 });
