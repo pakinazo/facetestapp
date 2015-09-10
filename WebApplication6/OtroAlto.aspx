@@ -202,14 +202,55 @@
                 Algo
             </td>
         </tr>
-
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Algo
+            </td>
+        </tr>
     </table>
     </div>
     </form>
      </div>
     <script>
         var offsetHeight = document.getElementById('alto').offsetHeight;
+        alert("1");
         FB.Canvas.setSize({ height: offsetHeight });
+        alert("2");
     </script>
 </body>
 </html>
