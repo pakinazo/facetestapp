@@ -247,6 +247,13 @@
     </form>
      </div>
     <script>
+        FB.init({
+            appId: '779337262082870',
+            cookie: true,
+            status: true,
+            xfbml: true
+        });
+
         var offsetHeight = document.getElementById('alto').offsetHeight;
         alert("1");
         FB.Canvas.setSize({ height: offsetHeight });
