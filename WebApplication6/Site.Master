@@ -27,6 +27,7 @@ Número UNO" />
 
 </head>
 <body>
+    <div id="alto">
     <form runat="server">
     <asp:ScriptManager runat="server">
         <Scripts>
@@ -94,5 +95,11 @@ Número UNO" />
         </div>
     </footer>
     </form>
+        </div>
+    
+    <script>
+        var offsetHeight = document.getElementById('alto').offsetHeight;
+        FB.Canvas.setSize({ height: offsetHeight });
+    </script>
 </body>
 </html>

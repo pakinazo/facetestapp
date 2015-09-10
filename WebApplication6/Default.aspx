@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="Home Page" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.vb" Inherits="WebApplication6._Default" %>
 
-<div id="Alto">
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
     <section class="featured">
         <div class="content-wrapper">
@@ -286,10 +285,6 @@ Facebook Invite Friends Link
         status: true,
         xfbml: true
     });
-
-    var offsetHeight = document.getElementById('alto').offsetHeight;
-    FB.Canvas.setSize({ height: offsetHeight });
-
     //function echoSize() {
     //    document.getElementById('output').innerHTML =
     //       "HTML Content Width: " + window.innerWidth +
@@ -308,4 +303,3 @@ Facebook Invite Friends Link
     //}
 </script>
 </asp:Content>
-</div>
