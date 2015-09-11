@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="Content/site.css?v1.13">
 </head>
 <body>
-    <div id="alto">
+
 <div id="ver" runat ="server" visible="true">
 <div id="wrapper">
         <header id="topHeader">
@@ -67,7 +67,7 @@
         </footer>
     </div>
 </div>
-    </div>
+
           <script>
               window.fbAsyncInit = function () {
                   FB.init({
@@ -76,7 +76,7 @@
                       version: 'v2.3',
                       xfbml: false  // parse XFBML
                   });
-                  var offsetHeight = document.getElementById('alto').offsetHeight;
+                  var offsetHeight = document.getElementById('ver').offsetHeight;
                   FB.Canvas.setSize({ height: offsetHeight + 40 });
               };
       </script>
