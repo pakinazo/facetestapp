@@ -61,6 +61,7 @@
 <br />
         ads
 <br />
+        <img src="http://www.planwallpaper.com/static/images/a601cb579cc9a289bc51cd41d8bcf478_large.jpg" />
 
     </div>
     <%--<script src="https://connect.facebook.net/es_MX/all.js"></script>--%>
