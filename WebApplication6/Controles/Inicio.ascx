@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <title>TiempoOficial.com Live Timing</title>
-	<link rel="stylesheet" href="Content/site.css?v1.13">
+<%--	<link rel="stylesheet" href="Content/site.css?v1.13">--%>
 </head>
 <body>
 
