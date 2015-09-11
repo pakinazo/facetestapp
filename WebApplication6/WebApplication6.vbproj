@@ -217,6 +217,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Controles\Inicio.ascx" />
+    <Content Include="Controles\Start.ascx" />
     <Content Include="Images\1200.png" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\banner-estadistica1200.png" />
@@ -245,10 +247,12 @@
     <Content Include="Images\sidebyside_fyf.png" />
     <Content Include="Images\sideFondo.png" />
     <Content Include="imggrande.aspx" />
+    <Content Include="Inicio.aspx" />
     <Content Include="Link.aspx" />
     <Content Include="OGFacebook.aspx" />
     <Content Include="OtroAlto.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Start.aspx" />
     <Content Include="TabPage.aspx" />
     <Content Include="Testingancho.aspx" />
     <Content Include="WebForm1.aspx" />
@@ -351,6 +355,20 @@
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Controles\Inicio.ascx.designer.vb">
+      <DependentUpon>Inicio.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Inicio.ascx.vb">
+      <DependentUpon>Inicio.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Start.ascx.designer.vb">
+      <DependentUpon>Start.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Start.ascx.vb">
+      <DependentUpon>Start.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Default.aspx.vb">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -369,6 +387,13 @@
     </Compile>
     <Compile Include="imggrande.aspx.vb">
       <DependentUpon>imggrande.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.vb">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.vb">
+      <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Link.aspx.designer.vb">
@@ -425,6 +450,13 @@
     <Compile Include="Site.Master.vb">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Start.aspx.designer.vb">
+      <DependentUpon>Start.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Start.aspx.vb">
+      <DependentUpon>Start.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="TabPage.aspx.designer.vb">
       <DependentUpon>TabPage.aspx</DependentUpon>
