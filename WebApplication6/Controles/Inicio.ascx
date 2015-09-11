@@ -99,7 +99,7 @@
 </div>
 
           <script>
-              window.fbAsyncInit = function () {
+           //   window.fbAsyncInit = function () {
                   FB.init({
                       appId: '779337262082870', // Set YOUR APP ID
                       status: true, // check login status
@@ -108,7 +108,7 @@
                   });
                   var offsetHeight = document.getElementById('ver').offsetHeight;
                   FB.Canvas.setSize({ height: offsetHeight + 40 });
-              };
+            //  };
       </script>
 
 	</body>
