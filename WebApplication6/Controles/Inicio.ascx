@@ -149,6 +149,35 @@
         <br /><br />
         <asp:HyperLink NavigateUrl="~/TiempoDigital.aspx" ID="resDigital" runat="server" CssClass="HistorialLink" Visible ="true">Tu tiempo digital</asp:HyperLink>
         <br />
+        sdsd
+        <br />
+        sdsd
+        <br />
+        sdsd
+
+        <br />
+        sdsd
+        <br />
+        sdsd
+        <br />
+        sdsd
+        <br />
+        sdsd
+        <br />
+        sdsd
+        <br />
+        sdsd
+        <br />
+        <br />
+        sdsd
+        <br />
+        sdsd
+        <br />
+        v
+        v
+        sdsd
+
+        sdsd
     </div>
 </article>
         <footer>
