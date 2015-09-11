@@ -26,12 +26,15 @@
 
 
     <script>
-    FB.init({
-        appId: '779337262082870',
-        cookie: true,
-        status: true,
-        xfbml: true
-    });
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '779337262082870',
+                cookie: true,
+                status: true,
+                xfbml: true
+            });
+        };
     </script>
     <script>
         var offsetHeight = document.getElementById('alto').offsetHeight;

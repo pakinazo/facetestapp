@@ -283,12 +283,16 @@ Facebook Invite Friends Link
 
 
 <script>
+    
+    window.fbAsyncInit = function () {
+
     FB.init({
         appId: '779337262082870',
         cookie: true,
         status: true,
         xfbml: true
     });
+    };
     //function echoSize() {
     //    document.getElementById('output').innerHTML =
     //       "HTML Content Width: " + window.innerWidth +

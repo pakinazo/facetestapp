@@ -448,14 +448,19 @@
      </div>
       <script src="https://connect.facebook.net/es_MX/all.js"></script>
     <script>
-        FB.init({
-            appId: '779337262082870',
-            cookie: true,
-            status: true,
-            xfbml: true
-        });
-        var offsetHeight = document.getElementById('alto').offsetHeight;
-        FB.Canvas.setSize({ height: offsetHeight + 40});
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '779337262082870',
+                cookie: true,
+                status: true,
+                xfbml: true
+            });
+            var offsetHeight = document.getElementById('alto').offsetHeight;
+            FB.Canvas.setSize({ height: offsetHeight + 40 });
+        };
+
+        
     </script>
 </body>
 </html>
