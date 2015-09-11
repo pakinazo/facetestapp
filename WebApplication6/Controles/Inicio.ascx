@@ -75,5 +75,6 @@
                   });
                   var offsetHeight = document.getElementById('ver').offsetHeight;
                   FB.Canvas.setSize({ height: offsetHeight + 40 });
+                  alert(offsetHeight);
             //  };
       </script>
