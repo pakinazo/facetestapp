@@ -34,11 +34,12 @@
                 status: true,
                 xfbml: true
             });
+            var offsetHeight = document.getElementById('alto').offsetHeight;
+            FB.Canvas.setSize({ height: offsetHeight + 40 });
         };
     </script>
     <script>
-        var offsetHeight = document.getElementById('alto').offsetHeight;
-        FB.Canvas.setSize({ height: offsetHeight +40 });
+        
     </script>
 </body>
 </html>
