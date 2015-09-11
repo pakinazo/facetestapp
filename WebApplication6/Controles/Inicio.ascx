@@ -61,7 +61,7 @@
 <br />
         ads
 <br />
-        <img src="http://www.planwallpaper.com/static/images/Eiffel-Tower-lanscape-Wallpaper-HD.jpg" />
+        <img src="http://www.planwallpaper.com/static/images/Nature-Beach-Scenery-Wallpaper-HD.jpg" />
 
     </div>
     <%--<script src="https://connect.facebook.net/es_MX/all.js"></script>--%>
@@ -76,11 +76,13 @@
                       version: 'v2.3',
                       xfbml: false  // parse XFBML
                   });
-                  var offsetHeight = document.getElementById('ver').offsetHeight;
-                  FB.Canvas.setSize({ height: offsetHeight + 40 });
-                  alert(offsetHeight);
+                
   
-
+                  window.onload = function () {
+                      var offsetHeight = document.getElementById('ver').offsetHeight;
+                      FB.Canvas.setSize({ height: offsetHeight + 40 });
+                      alert(offsetHeight);
+                  };
       </script>
 
       
