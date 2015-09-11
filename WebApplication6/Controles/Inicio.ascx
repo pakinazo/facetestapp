@@ -62,11 +62,12 @@
         ads
 <br />
         <img src="http://www.planwallpaper.com/static/images/Nature-Beach-Scenery-Wallpaper-HD.jpg" />
-
+        <img src="http://www.planwallpaper.com/static/images/black-apple-wallpaper-hd-hd-wallpapers-landscape-animals-photo-wallpaper-hd.jpg" />
+        
     </div>
     <%--<script src="https://connect.facebook.net/es_MX/all.js"></script>--%>
 
-    <script src="https://connect.facebook.net/es_MX/all.js"></script>
+  <%--  <script src="https://connect.facebook.net/es_MX/all.js"></script>--%>
           <script>
 
         
@@ -77,11 +78,19 @@
                       xfbml: false  // parse XFBML
                   });
                 
-  
+                  // Load the SDK asynchronously
+                  (function (d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) { return; }
+                      js = d.createElement(s); js.id = id;
+                      js.src = "//connect.facebook.net/es_LA/sdk.js";
+                      fjs.parentNode.insertBefore(js, fjs);
+                  }(document, 'script', 'facebook-jssdk'));
+
                   window.onload = function () {
                       var offsetHeight = document.getElementById('ver').offsetHeight;
                       FB.Canvas.setSize({ height: offsetHeight + 40 });
-                      alert(offsetHeight);
+                    
                   };
       </script>
 
