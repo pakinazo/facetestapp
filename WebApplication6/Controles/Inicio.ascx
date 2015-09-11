@@ -99,7 +99,7 @@
 </head>
 <body>
     <div id="alto">
-<div id="ver" runat ="server" visible="false">
+<div id="ver" runat ="server" visible="true">
 <div id="wrapper">
         <header id="topHeader">
                                     <h1>
