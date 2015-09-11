@@ -53,9 +53,12 @@
         window.fbAsyncInit = function () {
             FB.init({
                 appId: '779337262082870',
-                cookie: true,
-                status: true,
-                xfbml: true
+                status: true, // check login status
+                version: 'v2.3',
+                xfbml: false  // parse XFBML
+                //cookie: true,
+                //status: true,
+                //xfbml: true
             });
             var offsetHeight = document.getElementById('alto').offsetHeight;
             FB.Canvas.setSize({ height: offsetHeight + 40 });
