@@ -7,22 +7,28 @@ Public Class Test2
     Inherits System.Web.UI.Page
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
-            If Not Request("accessToken") Is Nothing Or Not Session("accessToken") Is Nothing Then
-                If Session("accessToken") Is Nothing Then
-                    Session("accessToken") = Request("accessToken")
+            Try
+
+                If Not Request("accessToken") Is Nothing Or Not Session("accessToken") Is Nothing Then
+                    If Session("accessToken") Is Nothing Then
+                        Session("accessToken") = Request("accessToken")
+                    End If
+
+                    Iniciar(Session("accessToken"))
+                Else
+                    Response.Redirect("Test.aspx")
                 End If
-
-                Iniciar(Session("accessToken"))
-            Else
-                Response.Redirect("Test.aspx")
-            End If
-
+            Catch ex As Exception
+                LError.Text = "error1 " & ex.Message.ToString
+            End Try
         End If
     End Sub
 
     Private Sub Iniciar(ByVal access_token As String)
 
+        Try
 
+    
         Dim fbClient As New Facebook.FacebookClient(access_token)
         Dim usrRest = fbClient.Get("me")
 
@@ -44,7 +50,9 @@ Public Class Test2
 
         Dim itemzazo As FacebookData = New JavaScriptSerializer().Deserialize(Of FacebookData)(strResponse)
         LBDatosPrincipalesFacebook.Text += String.Format("id: {0}, fistname: {1}, lastname {2}", itemzazo.id, itemzazo.first_name, itemzazo.last_name)
-
+        Catch ex As Exception
+            LError.Text = "error2 " & ex.Message.ToString
+        End Try
     End Sub
 
     Protected Sub BAceptar_Click(sender As Object, e As EventArgs) Handles BAceptar.Click

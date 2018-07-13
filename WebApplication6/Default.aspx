@@ -290,6 +290,7 @@ Facebook Invite Friends Link
         appId: '779337262082870',
         cookie: true,
         status: true,
+        version: 'v2.12',
         xfbml: true
     });
     };
