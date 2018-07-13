@@ -90,7 +90,7 @@ Public Class Test2
             Dim result As Object = fb.Get("oauth/access_token", New With {.client_id = ConfigurationManager.AppSettings("FB_Client_ID"), .client_secret = ConfigurationManager.AppSettings("FB_Client_secret"), .grant_type = "client_credentials"})
 
             Dim fbclient As New Facebook.FacebookClient(result.access_token)
-
+            fbclient.Version = "2.12"
             'Enviar Notificacion ejemplo:
             'POST /{recipient_userid}/notifications?
             'access_token= … & 
