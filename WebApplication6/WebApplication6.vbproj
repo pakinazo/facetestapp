@@ -254,6 +254,8 @@
     <Content Include="OGFacebook.aspx" />
     <Content Include="OtroAlto.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Privacidad - Copy.html" />
+    <Content Include="Privacidad.html" />
     <Content Include="Privacy.aspx" />
     <Content Include="Start.aspx" />
     <Content Include="TabPage.aspx" />
