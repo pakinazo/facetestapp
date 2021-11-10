@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -252,6 +254,7 @@
     <Content Include="OGFacebook.aspx" />
     <Content Include="OtroAlto.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Privacy.aspx" />
     <Content Include="Start.aspx" />
     <Content Include="TabPage.aspx" />
     <Content Include="Testingancho.aspx" />
@@ -434,6 +437,13 @@
     </Compile>
     <Compile Include="OtroAlto.aspx.vb">
       <DependentUpon>OtroAlto.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Privacy.aspx.designer.vb">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privacy.aspx.vb">
+      <DependentUpon>Privacy.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ResponseHelper.vb" />
